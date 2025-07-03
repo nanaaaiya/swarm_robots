@@ -1,0 +1,42 @@
+[0.013s] Invoking command in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/robot_bringup -DCMAKE_INSTALL_PREFIX=/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup
+[0.120s] -- The C compiler identification is GNU 11.4.0
+[0.221s] -- The CXX compiler identification is GNU 11.4.0
+[0.236s] -- Detecting C compiler ABI info
+[0.305s] -- Detecting C compiler ABI info - done
+[0.318s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.319s] -- Detecting C compile features
+[0.320s] -- Detecting C compile features - done
+[0.323s] -- Detecting CXX compiler ABI info
+[0.396s] -- Detecting CXX compiler ABI info - done
+[0.413s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.413s] -- Detecting CXX compile features
+[0.414s] -- Detecting CXX compile features - done
+[0.423s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.566s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.666s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.751s] -- Added test 'lint_cmake' to check CMake code style
+[0.752s] -- Added test 'xmllint' to check XML markup files
+[0.754s] -- Configuring done
+[0.756s] -- Generating done
+[0.757s] -- Build files have been written to: /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_bringup
+[0.762s] Invoked command in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/robot_bringup -DCMAKE_INSTALL_PREFIX=/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup
+[0.764s] Invoking command in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_bringup -- -j6 -l6
+[0.799s] Invoked command in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_bringup -- -j6 -l6
+[0.809s] Invoking command in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_bringup
+[0.816s] -- Install configuration: ""
+[0.816s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/ament_index/resource_index/package_run_dependencies/robot_bringup
+[0.816s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/ament_index/resource_index/parent_prefix_path/robot_bringup
+[0.816s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.sh
+[0.816s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.dsv
+[0.816s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/environment/path.sh
+[0.817s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/environment/path.dsv
+[0.817s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/local_setup.bash
+[0.817s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/local_setup.sh
+[0.817s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/local_setup.zsh
+[0.817s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/local_setup.dsv
+[0.817s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/package.dsv
+[0.817s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/ament_index/resource_index/packages/robot_bringup
+[0.817s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig.cmake
+[0.818s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig-version.cmake
+[0.818s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/package.xml
+[0.819s] Invoked command in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_bringup
