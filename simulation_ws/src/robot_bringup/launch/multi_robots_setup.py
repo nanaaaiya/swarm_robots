@@ -25,7 +25,7 @@ def gen_robot_list(number_of_robots):
 def generate_launch_description():
     package_name = 'robot_bringup'
     pkg_path = os.path.join(get_package_share_directory(package_name))
-    urdf = os.path.join(pkg_path, 'description/', 'swarm_bot.xacro')
+    urdf = os.path.join(pkg_path, 'description/', 'swarm_bot.xarco')
     
     # urdf = os.path.join(get_package_share_directory('robot_bringup'), 'descriptions/', 'robot_swarm.urdf')
     pkg_robot_description = get_package_share_directory('robot_bringup')
@@ -40,7 +40,7 @@ def generate_launch_description():
         spawn_robots_cmds.append(
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(os.path.join(pkg_robot_description, 'launch',
-                                                           'spawn_robot_launch.py')),
+                                                           'robot_spawn_tf.py')),
                 launch_arguments={
                                   'robot_urdf': urdf,
                                   'x': TextSubstitution(text=str(robot['x_pose'])),
