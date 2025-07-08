@@ -52,7 +52,7 @@ def generate_launch_description():
     # Spawn Robot node
     spawn_robot_node = launch_ros.actions.Node(
         package='robot_bringup',
-        executable='spawn_robot.py',
+        executable='robot_spawn_position.py',
         output='screen',
         arguments=[
             '--robot_urdf', robot_urdf_path,

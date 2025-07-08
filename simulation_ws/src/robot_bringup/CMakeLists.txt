@@ -23,8 +23,15 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-install(DIRECTORY description launch
+install(DIRECTORY description launch worlds
   DESTINATION share/${PROJECT_NAME}/
+)
+
+install(
+  PROGRAMS
+    launch/robot_spawn_position.py
+    launch/robot_spawn_tf.py
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 ament_package()
