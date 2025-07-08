@@ -7,8 +7,8 @@
 
             <!-- ROS parameters -->
             <ros>
-            <namespace>robot_namespace</namespace>
-            <param name="robot_description" value="robot_description" />
+                <namespace>robot_namespace</namespace>
+                <param name="robot_description" value="robot_description" />
             </ros>
     
     
