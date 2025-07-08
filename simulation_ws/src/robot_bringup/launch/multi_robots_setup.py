@@ -25,7 +25,7 @@ def gen_robot_list(number_of_robots):
 def generate_launch_description():
     package_name = 'robot_bringup'
     pkg_path = os.path.join(get_package_share_directory(package_name))
-    urdf = os.path.join(pkg_path, 'description/', 'swarm_bot.xarco')
+    urdf = os.path.join(pkg_path, 'description/', 'swarm_bot.xacro')
     
     # urdf = os.path.join(get_package_share_directory('robot_bringup'), 'descriptions/', 'robot_swarm.urdf')
     pkg_robot_description = get_package_share_directory('robot_bringup')
