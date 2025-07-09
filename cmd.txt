@@ -58,3 +58,7 @@ colcon build --symlink-install
 source install/setup.bash
 echo "~/Documents/GitHub/swarm_robot/simulation_ws/install/setup.bash"  >> ~/.bashrc
 
+
+-> install requirements
+
+#
