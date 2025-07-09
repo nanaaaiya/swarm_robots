@@ -47,8 +47,7 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        base_footprint:
-          Value: true
+
         base_link:
           Value: true
         base_scan:
@@ -73,8 +72,7 @@ Visualization Manager:
       Tree:
         map:
           odom:
-            base_footprint:
-              base_link:
+            base_link:
                 base_scan:
                   {}
                 caster_back_link:
@@ -84,7 +82,7 @@ Visualization Manager:
                 wheel_left_link:
                   {}
                 wheel_right_link:
-                  {}
+                  {}              
       Update Interval: 0
       Value: true
     - Alpha: 1
