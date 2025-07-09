@@ -13,7 +13,7 @@
     </link>
 
     <!-- Base -->
-    <link name="base_link">
+    <link name="chassis">
         <visual>
             <!-- change the position of the visualization only, not the axis -->
             <origin xyz="0 0 0.1075" rpy="0 0 0"/>
@@ -36,7 +36,7 @@
         </xacro:inertial_cylinder>
     </link>
 
-    <gazebo reference="base_link">
+    <gazebo reference="chassis">
         <material>Gazebo/White</material>
     </gazebo>
     
@@ -150,7 +150,7 @@
     <!-- Base -->
     <joint name="origin_joint" type="fixed">
         <parent link="origin_link"/>
-        <child link="base_link"/>
+        <child link="chassis"/>
         <origin xyz="0 0 -0.0325"/>
     </joint>
 

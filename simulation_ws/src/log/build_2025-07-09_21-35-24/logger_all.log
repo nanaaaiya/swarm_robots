@@ -1,0 +1,277 @@
+[0.183s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.183s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=6, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7bf60a749a20>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7bf60a749420>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7bf60a749420>>, mixin_verb=('build',))
+[0.556s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.557s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.557s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.557s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.557s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.557s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.557s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src'
+[0.557s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.557s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.557s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.557s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.557s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.557s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.557s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.558s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.558s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.572s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.572s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.572s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.572s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.572s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.572s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.572s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.572s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.573s] Level 1:colcon.colcon_core.package_identification:_identify(cartographer) by extensions ['ignore', 'ignore_ament_install']
+[0.573s] Level 1:colcon.colcon_core.package_identification:_identify(cartographer) by extension 'ignore'
+[0.573s] Level 1:colcon.colcon_core.package_identification:_identify(cartographer) by extension 'ignore_ament_install'
+[0.573s] Level 1:colcon.colcon_core.package_identification:_identify(cartographer) by extensions ['colcon_pkg']
+[0.573s] Level 1:colcon.colcon_core.package_identification:_identify(cartographer) by extension 'colcon_pkg'
+[0.573s] Level 1:colcon.colcon_core.package_identification:_identify(cartographer) by extensions ['colcon_meta']
+[0.573s] Level 1:colcon.colcon_core.package_identification:_identify(cartographer) by extension 'colcon_meta'
+[0.573s] Level 1:colcon.colcon_core.package_identification:_identify(cartographer) by extensions ['ros']
+[0.573s] Level 1:colcon.colcon_core.package_identification:_identify(cartographer) by extension 'ros'
+[0.577s] DEBUG:colcon.colcon_core.package_identification:Package 'cartographer' with type 'ros.ament_cmake' and name 'cartographer'
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(robot_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(robot_bringup) by extension 'ignore'
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(robot_bringup) by extension 'ignore_ament_install'
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(robot_bringup) by extensions ['colcon_pkg']
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(robot_bringup) by extension 'colcon_pkg'
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(robot_bringup) by extensions ['colcon_meta']
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(robot_bringup) by extension 'colcon_meta'
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(robot_bringup) by extensions ['ros']
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(robot_bringup) by extension 'ros'
+[0.580s] DEBUG:colcon.colcon_core.package_identification:Package 'robot_bringup' with type 'ros.ament_cmake' and name 'robot_bringup'
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(robot_navigation) by extensions ['ignore', 'ignore_ament_install']
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(robot_navigation) by extension 'ignore'
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(robot_navigation) by extension 'ignore_ament_install'
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(robot_navigation) by extensions ['colcon_pkg']
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(robot_navigation) by extension 'colcon_pkg'
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(robot_navigation) by extensions ['colcon_meta']
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(robot_navigation) by extension 'colcon_meta'
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(robot_navigation) by extensions ['ros']
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(robot_navigation) by extension 'ros'
+[0.581s] DEBUG:colcon.colcon_core.package_identification:Package 'robot_navigation' with type 'ros.ament_cmake' and name 'robot_navigation'
+[0.581s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_nav_files) by extensions ['ignore', 'ignore_ament_install']
+[0.581s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_nav_files) by extension 'ignore'
+[0.581s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_nav_files) by extension 'ignore_ament_install'
+[0.581s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_nav_files) by extensions ['colcon_pkg']
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_nav_files) by extension 'colcon_pkg'
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_nav_files) by extensions ['colcon_meta']
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_nav_files) by extension 'colcon_meta'
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_nav_files) by extensions ['ros']
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_nav_files) by extension 'ros'
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_nav_files) by extensions ['cmake', 'python']
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_nav_files) by extension 'cmake'
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_nav_files) by extension 'python'
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_nav_files) by extensions ['python_setup_py']
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_nav_files) by extension 'python_setup_py'
+[0.582s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.582s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.582s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.582s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.582s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.641s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.641s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.647s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 4 installed packages in /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install
+[0.647s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 5 installed packages in /home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install
+[0.650s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 326 installed packages in /opt/ros/humble
+[0.652s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.711s] WARNING:colcon.colcon_core.package_selection:Some selected packages are already built in one or more underlay workspaces:
+	'cartographer' is in: /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer, /home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/cartographer
+If a package in a merged underlay workspace is overridden and it installs headers, then all packages in the overlay must sort their include directories by workspace order. Failure to do so may result in build failures or undefined behavior at run time.
+If the overridden package is used by another package in any underlay, then the overriding package in the overlay must be API and ABI compatible or undefined behavior at run time may occur.
+
+If you understand the risks and want to override a package anyways, add the following to the command line:
+	--allow-overriding cartographer
+
+This may be promoted to an error in a future release of colcon-override-check.
+[0.713s] Level 5:colcon.colcon_core.verb:set package 'cartographer' build argument 'cmake_args' from command line to 'None'
+[0.713s] Level 5:colcon.colcon_core.verb:set package 'cartographer' build argument 'cmake_target' from command line to 'None'
+[0.713s] Level 5:colcon.colcon_core.verb:set package 'cartographer' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.713s] Level 5:colcon.colcon_core.verb:set package 'cartographer' build argument 'cmake_clean_cache' from command line to 'False'
+[0.713s] Level 5:colcon.colcon_core.verb:set package 'cartographer' build argument 'cmake_clean_first' from command line to 'False'
+[0.713s] Level 5:colcon.colcon_core.verb:set package 'cartographer' build argument 'cmake_force_configure' from command line to 'False'
+[0.713s] Level 5:colcon.colcon_core.verb:set package 'cartographer' build argument 'ament_cmake_args' from command line to 'None'
+[0.713s] Level 5:colcon.colcon_core.verb:set package 'cartographer' build argument 'catkin_cmake_args' from command line to 'None'
+[0.713s] Level 5:colcon.colcon_core.verb:set package 'cartographer' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.713s] DEBUG:colcon.colcon_core.verb:Building package 'cartographer' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/cartographer', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer', 'merge_install': False, 'path': '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/cartographer', 'symlink_install': False, 'test_result_base': None}
+[0.714s] Level 5:colcon.colcon_core.verb:set package 'robot_navigation' build argument 'cmake_args' from command line to 'None'
+[0.714s] Level 5:colcon.colcon_core.verb:set package 'robot_navigation' build argument 'cmake_target' from command line to 'None'
+[0.714s] Level 5:colcon.colcon_core.verb:set package 'robot_navigation' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.714s] Level 5:colcon.colcon_core.verb:set package 'robot_navigation' build argument 'cmake_clean_cache' from command line to 'False'
+[0.714s] Level 5:colcon.colcon_core.verb:set package 'robot_navigation' build argument 'cmake_clean_first' from command line to 'False'
+[0.714s] Level 5:colcon.colcon_core.verb:set package 'robot_navigation' build argument 'cmake_force_configure' from command line to 'False'
+[0.714s] Level 5:colcon.colcon_core.verb:set package 'robot_navigation' build argument 'ament_cmake_args' from command line to 'None'
+[0.714s] Level 5:colcon.colcon_core.verb:set package 'robot_navigation' build argument 'catkin_cmake_args' from command line to 'None'
+[0.714s] Level 5:colcon.colcon_core.verb:set package 'robot_navigation' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.714s] DEBUG:colcon.colcon_core.verb:Building package 'robot_navigation' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_navigation', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation', 'merge_install': False, 'path': '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/robot_navigation', 'symlink_install': False, 'test_result_base': None}
+[0.715s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'cmake_args' from command line to 'None'
+[0.715s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'cmake_target' from command line to 'None'
+[0.715s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.715s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[0.715s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[0.715s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[0.715s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[0.715s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[0.715s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.715s] DEBUG:colcon.colcon_core.verb:Building package 'robot_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup', 'merge_install': False, 'path': '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/robot_bringup', 'symlink_install': False, 'test_result_base': None}
+[0.715s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.717s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.718s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/cartographer' with build type 'ament_cmake'
+[0.718s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/cartographer'
+[0.722s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.723s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.723s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.728s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/robot_navigation' with build type 'ament_cmake'
+[0.729s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/robot_navigation'
+[0.729s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.729s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.743s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/cartographer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/nav2_project:/opt/ros/humble /usr/bin/cmake --build /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/cartographer -- -j6 -l6
+[0.749s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/nav2_project:/opt/ros/humble /usr/bin/cmake /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/robot_navigation -DCMAKE_INSTALL_PREFIX=/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation
+[2.843s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/nav2_project:/opt/ros/humble /usr/bin/cmake /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/robot_navigation -DCMAKE_INSTALL_PREFIX=/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation
+[2.846s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/nav2_project:/opt/ros/humble /usr/bin/cmake --build /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_navigation -- -j6 -l6
+[2.901s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/nav2_project:/opt/ros/humble /usr/bin/cmake --build /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_navigation -- -j6 -l6
+[2.913s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/nav2_project:/opt/ros/humble /usr/bin/cmake --install /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_navigation
+[2.928s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_navigation)
+[2.929s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/nav2_project:/opt/ros/humble /usr/bin/cmake --install /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_navigation
+[2.935s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation' for CMake module files
+[2.935s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation' for CMake config files
+[2.935s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_navigation', 'cmake_prefix_path')
+[2.936s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/share/robot_navigation/hook/cmake_prefix_path.ps1'
+[2.937s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/share/robot_navigation/hook/cmake_prefix_path.dsv'
+[2.937s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/share/robot_navigation/hook/cmake_prefix_path.sh'
+[2.938s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/bin'
+[2.938s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/lib/pkgconfig/robot_navigation.pc'
+[2.939s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/lib/python3.10/site-packages'
+[2.939s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/bin'
+[2.939s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/share/robot_navigation/package.ps1'
+[2.941s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/share/robot_navigation/package.dsv'
+[2.941s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/share/robot_navigation/package.sh'
+[2.943s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/share/robot_navigation/package.bash'
+[2.944s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/share/robot_navigation/package.zsh'
+[2.946s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/share/colcon-core/packages/robot_navigation)
+[2.948s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_navigation)
+[2.948s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation' for CMake module files
+[2.949s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation' for CMake config files
+[2.949s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_navigation', 'cmake_prefix_path')
+[2.950s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/share/robot_navigation/hook/cmake_prefix_path.ps1'
+[2.951s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/share/robot_navigation/hook/cmake_prefix_path.dsv'
+[2.951s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/share/robot_navigation/hook/cmake_prefix_path.sh'
+[2.952s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/bin'
+[2.953s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/lib/pkgconfig/robot_navigation.pc'
+[2.953s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/lib/python3.10/site-packages'
+[2.953s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/bin'
+[2.954s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/share/robot_navigation/package.ps1'
+[2.955s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/share/robot_navigation/package.dsv'
+[2.956s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/share/robot_navigation/package.sh'
+[2.957s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/share/robot_navigation/package.bash'
+[2.958s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/share/robot_navigation/package.zsh'
+[2.958s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_navigation/share/colcon-core/packages/robot_navigation)
+[3.451s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/cartographer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/nav2_project:/opt/ros/humble /usr/bin/cmake --build /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/cartographer -- -j6 -l6
+[3.455s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/cartographer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/nav2_project:/opt/ros/humble /usr/bin/cmake --install /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/cartographer
+[3.467s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(cartographer)
+[3.467s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer' for CMake module files
+[3.468s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer' for CMake config files
+[3.469s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/cartographer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/nav2_project:/opt/ros/humble /usr/bin/cmake --install /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/cartographer
+[3.469s] Level 1:colcon.colcon_core.shell:create_environment_hook('cartographer', 'cmake_prefix_path')
+[3.469s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/share/cartographer/hook/cmake_prefix_path.ps1'
+[3.470s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/share/cartographer/hook/cmake_prefix_path.dsv'
+[3.470s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/share/cartographer/hook/cmake_prefix_path.sh'
+[3.471s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/bin'
+[3.471s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/lib/pkgconfig/cartographer.pc'
+[3.471s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/lib/python3.10/site-packages'
+[3.472s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/bin'
+[3.472s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/share/cartographer/package.ps1'
+[3.472s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/share/cartographer/package.dsv'
+[3.473s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/share/cartographer/package.sh'
+[3.473s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/share/cartographer/package.bash'
+[3.474s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/share/cartographer/package.zsh'
+[3.474s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/share/colcon-core/packages/cartographer)
+[3.475s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(cartographer)
+[3.475s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer' for CMake module files
+[3.476s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer' for CMake config files
+[3.476s] Level 1:colcon.colcon_core.shell:create_environment_hook('cartographer', 'cmake_prefix_path')
+[3.476s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/share/cartographer/hook/cmake_prefix_path.ps1'
+[3.477s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/share/cartographer/hook/cmake_prefix_path.dsv'
+[3.477s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/share/cartographer/hook/cmake_prefix_path.sh'
+[3.478s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/bin'
+[3.478s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/lib/pkgconfig/cartographer.pc'
+[3.478s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/lib/python3.10/site-packages'
+[3.478s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/bin'
+[3.479s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/share/cartographer/package.ps1'
+[3.479s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/share/cartographer/package.dsv'
+[3.480s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/share/cartographer/package.sh'
+[3.480s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/share/cartographer/package.bash'
+[3.481s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/share/cartographer/package.zsh'
+[3.481s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer/share/colcon-core/packages/cartographer)
+[3.481s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/robot_bringup' with build type 'ament_cmake'
+[3.482s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/robot_bringup'
+[3.482s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.482s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.496s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_bringup': CMAKE_PREFIX_PATH=/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/nav2_course:/home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/turtlebot3_navigation2:/home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/navigation:/home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/tlbot_navigation2:/home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/robot_bringup:/home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/cartographer:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/nav2_project:/opt/ros/humble /usr/bin/cmake --build /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_bringup -- -j6 -l6
+[3.825s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_bringup' returned '0': CMAKE_PREFIX_PATH=/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/nav2_course:/home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/turtlebot3_navigation2:/home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/navigation:/home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/tlbot_navigation2:/home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/robot_bringup:/home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/cartographer:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/nav2_project:/opt/ros/humble /usr/bin/cmake --build /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_bringup -- -j6 -l6
+[3.828s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_bringup': CMAKE_PREFIX_PATH=/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/nav2_course:/home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/turtlebot3_navigation2:/home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/navigation:/home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/tlbot_navigation2:/home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/robot_bringup:/home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/cartographer:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/nav2_project:/opt/ros/humble /usr/bin/cmake --install /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_bringup
+[3.841s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_bringup)
+[3.842s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup' for CMake module files
+[3.843s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_bringup' returned '0': CMAKE_PREFIX_PATH=/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/cartographer:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/nav2_course:/home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/turtlebot3_navigation2:/home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/navigation:/home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/tlbot_navigation2:/home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/robot_bringup:/home/hehe/Documents/GitHub/swarm_robot/simulation_ws/install/cartographer:/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/nav2_project:/opt/ros/humble /usr/bin/cmake --install /home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/build/robot_bringup
+[3.843s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup' for CMake config files
+[3.844s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_bringup', 'cmake_prefix_path')
+[3.844s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/hook/cmake_prefix_path.ps1'
+[3.845s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/hook/cmake_prefix_path.dsv'
+[3.846s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/hook/cmake_prefix_path.sh'
+[3.847s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/lib'
+[3.847s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/bin'
+[3.848s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/lib/pkgconfig/robot_bringup.pc'
+[3.848s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/lib/python3.10/site-packages'
+[3.848s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/bin'
+[3.849s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/package.ps1'
+[3.850s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/package.dsv'
+[3.851s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/package.sh'
+[3.851s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/package.bash'
+[3.852s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/package.zsh'
+[3.853s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/colcon-core/packages/robot_bringup)
+[3.854s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_bringup)
+[3.854s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup' for CMake module files
+[3.855s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup' for CMake config files
+[3.856s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_bringup', 'cmake_prefix_path')
+[3.856s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/hook/cmake_prefix_path.ps1'
+[3.857s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/hook/cmake_prefix_path.dsv'
+[3.858s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/hook/cmake_prefix_path.sh'
+[3.859s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/lib'
+[3.859s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/bin'
+[3.859s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/lib/pkgconfig/robot_bringup.pc'
+[3.860s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/lib/python3.10/site-packages'
+[3.860s] Level 1:colcon.colcon_core.environment:checking '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/bin'
+[3.861s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/package.ps1'
+[3.862s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/package.dsv'
+[3.863s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/package.sh'
+[3.864s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/package.bash'
+[3.864s] INFO:colcon.colcon_core.shell:Creating package script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/robot_bringup/package.zsh'
+[3.865s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/robot_bringup/share/colcon-core/packages/robot_bringup)
+[3.866s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[3.867s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[3.867s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[3.867s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[3.878s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[3.878s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[3.878s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[3.904s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[3.904s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/local_setup.ps1'
+[3.907s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/_local_setup_util_ps1.py'
+[3.910s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/setup.ps1'
+[3.912s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/local_setup.sh'
+[3.913s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/_local_setup_util_sh.py'
+[3.914s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/setup.sh'
+[3.916s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/local_setup.bash'
+[3.917s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/setup.bash'
+[3.919s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/local_setup.zsh'
+[3.920s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/install/setup.zsh'

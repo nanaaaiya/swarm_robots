@@ -1,2 +1,4 @@
 ros-humble-xacro
 ros-humble-joint-state-publisher
+ros-humble-tf2-tools
+ros-humble-nav2-bringup

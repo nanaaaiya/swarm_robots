@@ -51,7 +51,7 @@ Visualization Manager:
           Value: true
         laser_frame:
           Value: true
-        base_link:
+        chassis:
           Value: true
         map:
           Value: true
@@ -82,7 +82,7 @@ Visualization Manager:
                 {}
               back_passive_wheel:
                 {}
-              base_link:
+              chassis:
                 laser_frame:             
       Update Interval: 0
       Value: true
