@@ -60,10 +60,19 @@ echo "~/Documents/GitHub/swarm_robot/simulation_ws/install/setup.bash"  >> ~/.ba
 sudo apt update
 sudo apt install -y $(cat requirement_ros.txt)
 
+# Spawn one robot in chosen world
+ros2 launch robot_bringup robot_spawn.launch.py world:=src/robot_bringup/worlds/swarm_world.worlds 
 
+# Spawn multiple robots in chosen world (uncomment namespace in description files)
 ros2 launch robot_bringup multi_robots_spawn.launch.py use_sim_time:=true   
 
-
+# Cartographer
+# Terminal 1:
+ros2 launch cartographer cartographer_launch.py use_sim_time:=true 
+# Terminal 2:
+ros2 run teleop_twist_keyboard teleop_twist_keyboard 
+# Terminal 3:
+ros2 run nav2_map_server map_saver_cli -f <map_name>
 
 # Navigation2
 # Terminal 1:
