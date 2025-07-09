@@ -47,23 +47,23 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        base_footprint:
+        origin_link:
+          Value: true
+        laser_frame:
           Value: true
         base_link:
-          Value: true
-        base_scan:
-          Value: true
-        caster_back_link:
-          Value: true
-        imu_link:
           Value: true
         map:
           Value: true
         odom:
           Value: true
-        wheel_left_link:
+        left_wheel:
           Value: true
-        wheel_right_link:
+        right_wheel:
+          Value: true
+        front_passive_wheel:
+          Value: true
+        back_passive_wheel:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -73,18 +73,17 @@ Visualization Manager:
       Tree:
         map:
           odom:
-            base_footprint:
+            origin_link:
+              left_wheel:
+                {}
+              right_wheel:
+                {}
+              front_passive_wheel:
+                {}
+              back_passive_wheel:
+                {}
               base_link:
-                base_scan:
-                  {}
-                caster_back_link:
-                  {}
-                imu_link:
-                  {}
-                wheel_left_link:
-                  {}
-                wheel_right_link:
-                  {}
+                laser_frame:             
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -168,7 +167,7 @@ Visualization Manager:
       Name: Map
       Topic:
         Depth: 5
-        Durability Policy: Volatile
+        Durability Policy: Transient Local
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable

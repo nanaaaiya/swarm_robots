@@ -1,19 +1,3 @@
--- Copyright 2016 The Cartographer Authors
---
--- Licensed under the Apache License, Version 2.0 (the "License");
--- you may not use this file except in compliance with the License.
--- You may obtain a copy of the License at
---
---      http://www.apache.org/licenses/LICENSE-2.0
---
--- Unless required by applicable law or agreed to in writing, software
--- distributed under the License is distributed on an "AS IS" BASIS,
--- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
--- See the License for the specific language governing permissions and
--- limitations under the License.
-
--- /* Author: Darby Lim */
-
 include "map_builder.lua"
 include "trajectory_builder.lua"
 
@@ -23,10 +7,11 @@ options = {
   map_frame = "map",
   tracking_frame = "base_link",
   published_frame = "odom",
+  -- base_link_frame = "origin_link"
   odom_frame = "odom",
-  provide_odom_frame = true,
+  provide_odom_frame = false,  -- Let Cartographer provide the odom frame if external odometry is unavailable
   publish_frame_projected_to_2d = true,
-  use_odometry = true,
+  use_odometry = false,  -- Ensure odometry is being published
   use_nav_sat = false,
   use_landmarks = false,
   num_laser_scans = 1,
@@ -48,14 +33,13 @@ MAP_BUILDER.use_trajectory_builder_2d = true
 
 TRAJECTORY_BUILDER_2D.min_range = 0.2  -- Adjust based on LiDAR specs
 TRAJECTORY_BUILDER_2D.max_range = 12.0  -- Adjust based on LiDAR specs
-TRAJECTORY_BUILDER_2D.missing_data_ray_length = 3.
+TRAJECTORY_BUILDER_2D.missing_data_ray_length = 5.
 TRAJECTORY_BUILDER_2D.use_imu_data = false
-TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = true 
+TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = true
 TRAJECTORY_BUILDER_2D.motion_filter.max_angle_radians = math.rad(0.1)
 
 POSE_GRAPH.constraint_builder.min_score = 0.65
 POSE_GRAPH.constraint_builder.global_localization_min_score = 0.7
-
--- POSE_GRAPH.optimize_every_n_nodes = 0
+POSE_GRAPH.optimize_every_n_nodes = 90  -- Enable optimization
 
 return options
