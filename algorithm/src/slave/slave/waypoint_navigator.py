@@ -7,6 +7,7 @@ from geometry_msgs.msg import PoseStamped, Point, Quaternion
 from nav2_msgs.action import NavigateToPose
 import tf_transformations
 import math
+from rclpy.parameter import Parameter
 
 class WaypointNavigatorNode(Node):
     def __init__(self):
@@ -14,7 +15,15 @@ class WaypointNavigatorNode(Node):
         
         # Declare parameters
         self.declare_parameter('robot_id', 0)
-        self.declare_parameter('waypoints', [])  # List of [x, y] coordinates
+        #self.declare_parameter('waypoints', [])  # List of [x, y] coordinates
+        self.declare_parameter('waypoints', [0.0])  # Force type to be DOUBLE_ARRAY
+        self.waypoints = self.get_parameter('waypoints').get_parameter_value().double_array_value
+
+        # Detect fallback default and replace with empty
+        if self.waypoints == [0.0]:
+            self.get_logger().warn('Waypoints parameter not provided. Defaulting to empty list.')
+            self.waypoints = []
+            
         self.robot_id = self.get_parameter('robot_id').get_parameter_value().integer_value
         self.waypoints = self.get_parameter('waypoints').get_parameter_value().double_array_value
         
