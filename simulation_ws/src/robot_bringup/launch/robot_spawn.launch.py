@@ -32,7 +32,6 @@ def generate_launch_description():
         output='screen',
         parameters=[params],
         # remappings=[
-        #     ("/scan", "laser_controller/out"),  # Remap LiDAR topic
         #     ("/odom", "odom"),  # Remap odom topic
         # ],
     )

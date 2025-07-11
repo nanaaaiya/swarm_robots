@@ -6,10 +6,11 @@
         <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
 
             <!-- ROS parameters -->
-            <!-- <ros>
+            <ros>
                 <namespace>robot_namespace</namespace>
                 <param name="robot_description" value="robot_description" />
-            </ros> -->
+                <remapping>cmd_vel:=/cmd_vel</remapping>
+            </ros>
     
     
             <!-- Wheel Information -->

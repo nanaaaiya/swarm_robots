@@ -10,10 +10,11 @@
     <!-- <plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'> -->
     <plugin filename="libgazebo_ros_diff_drive.so" name="diff_drive_controller">
       <!-- ROS parameters -->
-      <!-- <ros>
+      <ros>
         <namespace>robot_namespace</namespace>
         <param name="robot_description" value="robot_description" />
-      </ros> -->
+        <remapping>cmd_vel:=/cmd_vel</remapping>
+      </ros>
       <!-- Wheel Information -->
       <left_joint>left_wheel_joint</left_joint>
       <right_joint>right_wheel_joint</right_joint>
