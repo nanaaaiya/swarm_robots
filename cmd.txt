@@ -96,4 +96,16 @@ ros2 action send_goal /follow_waypoints \
     {"header":{"frame_id":"map"},"pose":{"position":{"x":0.0,"y":0.0,"z":0.0},"orientation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0}}}
   ]}'
 
+# Navigation process
+ros2 run slave navigation_process
+
+# Waypoint_navigator
+ros2 run slave waypoint_navigator   --ros-args --params-file ~/swarm_robots/algorithm/src/slave/config/waypoints.yaml
+
+# StatusReceiver
+ros2 run master statusReceiver
+
+# ACO
+ros2 run master aco
+
 
