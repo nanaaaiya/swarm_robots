@@ -1,0 +1,18 @@
+cd robot_ws/src
+
+colcon build --symlink-install
+
+source ./install/setup.bash
+
+ros2 launch turtlebot3_multi_robot gazebo_multi_nav2_world.launch.py enable_rviz:=False 
+
+ros2 launch turtlebot3_multi_robot gazebo_multi_nav2_world.launch.py enable_drive:=True 
+
+# Setting initial pose via command line for tb1 robot
+ros2 topic pub -1 --qos-reliability reliable /tb1/initialpose geometry_msgs/PoseWithCovarianceStamped "{header: {frame_id: map}, pose: {pose: {position: {x: -0.6, y: 0.0, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 1.01, w: 1.0}}, }}"
+
+# Setting navigation goal via command line for tb1 robot
+ros2 action send_goal  /tb1/navigate_to_pose nav2_msgs/action/NavigateToPose "pose: {header: {frame_id: map}, pose: {position: {x: -3.2, y: 6.20, z: 0.0}, orientation:{x: 0.0, y: 0.0, z: 0, w: 1.0000000}}}"
+
+#rvzi2 call for /tb1:
+rviz2 -d ./src/navigation2/nav2_bringup/bringup/rviz/multi_nav2_default_view.rviz --ros-args -r __node:=rviz2 -r __ns:=/tb1 -r /tf:=tf -r /tf_static:=tf_static -r /goal_pose:=goal_pose -r /clicked_point:=clicked_point -r /initialpose:=initialpose

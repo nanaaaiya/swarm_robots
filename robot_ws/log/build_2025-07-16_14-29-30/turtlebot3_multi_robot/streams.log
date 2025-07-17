@@ -1,0 +1,53 @@
+[0.039s] Invoking command in '/home/thaoton1910/swarm_robots/robot_ws/build/turtlebot3_multi_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thaoton1910/swarm_robots/algorithm/install/slave:/home/thaoton1910/swarm_robots/algorithm/install/master:/opt/ros/humble /usr/bin/cmake --build /home/thaoton1910/swarm_robots/robot_ws/build/turtlebot3_multi_robot -- -j8 -l8
+[0.223s] Invoked command in '/home/thaoton1910/swarm_robots/robot_ws/build/turtlebot3_multi_robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thaoton1910/swarm_robots/algorithm/install/slave:/home/thaoton1910/swarm_robots/algorithm/install/master:/opt/ros/humble /usr/bin/cmake --build /home/thaoton1910/swarm_robots/robot_ws/build/turtlebot3_multi_robot -- -j8 -l8
+[0.249s] Invoking command in '/home/thaoton1910/swarm_robots/robot_ws/build/turtlebot3_multi_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thaoton1910/swarm_robots/algorithm/install/slave:/home/thaoton1910/swarm_robots/algorithm/install/master:/opt/ros/humble /usr/bin/cmake --install /home/thaoton1910/swarm_robots/robot_ws/build/turtlebot3_multi_robot
+[0.265s] -- Install configuration: ""
+[0.270s] -- Execute custom install script
+[0.273s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//launch/gazebo_multi_nav2_world.launch.py
+[0.274s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//launch/gazebo_multi_world.launch.py
+[0.275s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//launch/nav2_bringup/bringup_launch.py
+[0.275s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//launch/nav2_bringup/localization_launch.py
+[0.275s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//launch/nav2_bringup/navigation_launch.py
+[0.277s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//launch/nav2_bringup/rviz_launch.py
+[0.277s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//launch/nav2_bringup/slam_launch.py
+[0.282s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//models/turtlebot3_burger/meshes/burger_base.dae
+[0.284s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//models/turtlebot3_burger/meshes/lds.dae
+[0.285s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//models/turtlebot3_burger/meshes/tire.dae
+[0.286s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//models/turtlebot3_burger/model-1_4.sdf
+[0.288s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//models/turtlebot3_burger/model.config
+[0.288s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//models/turtlebot3_burger/model.sdf
+[0.289s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//models/turtlebot3_waffle/meshes/lds.dae
+[0.291s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//models/turtlebot3_waffle/meshes/r200.dae
+[0.293s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//models/turtlebot3_waffle/meshes/tire.dae
+[0.294s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//models/turtlebot3_waffle/meshes/waffle_base.dae
+[0.295s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//models/turtlebot3_waffle/model-1_4.sdf
+[0.298s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//models/turtlebot3_waffle/model.config
+[0.298s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//models/turtlebot3_waffle/model.sdf
+[0.299s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//models/turtlebot3_waffle/model_nocamera.sdf
+[0.300s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//rviz/multi_nav2_default_view.rviz
+[0.301s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//rviz/nav2_default_view.rviz
+[0.303s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//urdf/common_properties.urdf
+[0.304s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//urdf/turtlebot3_burger.urdf
+[0.305s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//urdf/turtlebot3_waffle.urdf
+[0.306s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//worlds/multi_empty_world.world
+[0.307s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//worlds/multi_robot.world 
+[0.308s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//worlds/multi_robot_world.world
+[0.310s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//worlds/swarm_world.world
+[0.311s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot//params/nav2_params.yaml
+[0.312s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot/environment/multi_robot.dsv
+[0.313s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/ament_index/resource_index/package_run_dependencies/turtlebot3_multi_robot
+[0.314s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/ament_index/resource_index/parent_prefix_path/turtlebot3_multi_robot
+[0.316s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot/environment/ament_prefix_path.sh
+[0.317s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot/environment/ament_prefix_path.dsv
+[0.318s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot/environment/path.sh
+[0.319s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot/environment/path.dsv
+[0.321s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot/local_setup.bash
+[0.322s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot/local_setup.sh
+[0.323s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot/local_setup.zsh
+[0.324s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot/local_setup.dsv
+[0.325s] -- Symlinking: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot/package.dsv
+[0.345s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/ament_index/resource_index/packages/turtlebot3_multi_robot
+[0.347s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot/cmake/turtlebot3_multi_robotConfig.cmake
+[0.348s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot/cmake/turtlebot3_multi_robotConfig-version.cmake
+[0.349s] -- Up-to-date symlink: /home/thaoton1910/swarm_robots/robot_ws/install/turtlebot3_multi_robot/share/turtlebot3_multi_robot/package.xml
+[0.354s] Invoked command in '/home/thaoton1910/swarm_robots/robot_ws/build/turtlebot3_multi_robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thaoton1910/swarm_robots/algorithm/install/slave:/home/thaoton1910/swarm_robots/algorithm/install/master:/opt/ros/humble /usr/bin/cmake --install /home/thaoton1910/swarm_robots/robot_ws/build/turtlebot3_multi_robot
