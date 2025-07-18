@@ -19,7 +19,6 @@ def gen_robot_list(number_of_robots):
         x_pos = float(i)
         robots.append({'name': robot_name, 'x_pose': x_pos, 'y_pose': 0.0, 'z_pose': 0.01})
 
-
     return robots 
 
 def generate_launch_description():
