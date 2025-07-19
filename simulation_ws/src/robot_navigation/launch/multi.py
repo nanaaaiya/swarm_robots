@@ -72,6 +72,18 @@ def generate_launch_description():
     for robot in robots:
         ns = robot['name']
 
+
+        ld.add_action(Node(
+            package='robot_state_publisher',
+            namespace=ns,
+            executable='robot_state_publisher',
+            output='screen',
+            parameters=[{'use_sim_time': use_sim_time,
+                            'publish_frequency': 10.0}],
+            remappings=remappings,
+            arguments=[urdf_file],
+        ))
+
         # Spawn robot
         ld.add_action(IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
@@ -79,6 +91,7 @@ def generate_launch_description():
             ),
             launch_arguments={
                 'robot_urdf': urdf_file,
+                'entity': ns,
                 'robot_name': ns,
                 'robot_namespace': ns,
                 'x': TextSubstitution(text=str(robot['x'])),
@@ -107,19 +120,19 @@ def generate_launch_description():
 
         # Static TF publisher after 6s
         static_tf = Node(
-            package='tf2_ros', executable='static_transform_publisher', name=f'static_map_to_odom_{ns}',
+            package='tf2_ros', executable='static_transform_publisher', name=f'static_odom_to_base_link_{ns}',
             namespace=ns,
-            arguments=['0','0','0','0','0','0', 'map', 'odom'], output='screen'
+            arguments=['0','0','0','0','0','0', 'odom', 'base_link'], output='screen'
         )
         ld.add_action(TimerAction(period=6.0, actions=[static_tf]))
 
         # RViz per robot after 8s
-        rviz_node = Node(
-            package='rviz2', executable='rviz2', name=f'{ns}_rviz', namespace=ns,
-            arguments=['-d', rviz_config], output='screen',
-            condition=IfCondition(enable_rviz)
-        )
-        ld.add_action(TimerAction(period=8.0, actions=[rviz_node]))
+        # rviz_node = Node(
+        #     package='rviz2', executable='rviz2', name=f'{ns}_rviz', namespace=ns,
+        #     arguments=['-d', rviz_config], output='screen',
+        #     condition=IfCondition(enable_rviz)
+        # )
+        # ld.add_action(TimerAction(period=8.0, actions=[rviz_node]))
 
     return ld
 
