@@ -13,7 +13,7 @@
       <ros>
         <namespace>robot_namespace</namespace>
         <param name="robot_description" value="robot_description" />
-        <remapping>cmd_vel:=/cmd_vel</remapping>
+        <!-- <remapping>cmd_vel:=/cmd_vel</remapping> -->
       </ros>
       <!-- Wheel Information -->
       <left_joint>left_wheel_joint</left_joint>

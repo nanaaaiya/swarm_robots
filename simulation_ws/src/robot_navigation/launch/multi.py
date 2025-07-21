@@ -79,8 +79,9 @@ def generate_launch_description():
             executable='robot_state_publisher',
             output='screen',
             parameters=[{'use_sim_time': use_sim_time,
-                            'publish_frequency': 10.0}],
-            remappings=remappings,
+                            'publish_frequency': 10.0,
+                            'frame_prefix': f'{ns}/'}],
+            # remappings=remappings,
             arguments=[urdf_file],
         ))
 
@@ -122,7 +123,7 @@ def generate_launch_description():
         static_tf = Node(
             package='tf2_ros', executable='static_transform_publisher', name=f'static_odom_to_base_link_{ns}',
             namespace=ns,
-            arguments=['0','0','0','0','0','0', 'odom', 'base_link'], output='screen'
+            arguments=['0','0','0','0','0','0',  f'{ns}/odom', f'{ns}/base_link'], output='screen'
         )
         ld.add_action(TimerAction(period=6.0, actions=[static_tf]))
 
