@@ -1,0 +1,5 @@
+[console_scripts]
+navigation_process = control.navigation_process:main
+odom = control.odometry:main
+send_vel = control.cmd_vel:main
+

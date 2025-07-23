@@ -1,0 +1,115 @@
+[0.000000] (-) TimerEvent: {}
+[0.004228] (control) JobQueued: {'identifier': 'control', 'dependencies': OrderedDict()}
+[0.004855] (control) JobStarted: {'identifier': 'control'}
+[0.096977] (-) TimerEvent: {}
+[0.199062] (-) TimerEvent: {}
+[0.302420] (-) TimerEvent: {}
+[0.407949] (-) TimerEvent: {}
+[0.508716] (-) TimerEvent: {}
+[0.609649] (-) TimerEvent: {}
+[0.711115] (-) TimerEvent: {}
+[0.814343] (-) TimerEvent: {}
+[0.915979] (-) TimerEvent: {}
+[1.018349] (-) TimerEvent: {}
+[1.119260] (-) TimerEvent: {}
+[1.220055] (-) TimerEvent: {}
+[1.321416] (-) TimerEvent: {}
+[1.423142] (-) TimerEvent: {}
+[1.525100] (-) TimerEvent: {}
+[1.628701] (-) TimerEvent: {}
+[1.729496] (-) TimerEvent: {}
+[1.831435] (-) TimerEvent: {}
+[1.934500] (-) TimerEvent: {}
+[2.040699] (-) TimerEvent: {}
+[2.141813] (-) TimerEvent: {}
+[2.242705] (-) TimerEvent: {}
+[2.344132] (-) TimerEvent: {}
+[2.447987] (-) TimerEvent: {}
+[2.550932] (-) TimerEvent: {}
+[2.653096] (-) TimerEvent: {}
+[2.754748] (-) TimerEvent: {}
+[2.855687] (-) TimerEvent: {}
+[2.956776] (-) TimerEvent: {}
+[3.058665] (-) TimerEvent: {}
+[3.160533] (-) TimerEvent: {}
+[3.262405] (-) TimerEvent: {}
+[3.363879] (-) TimerEvent: {}
+[3.465608] (-) TimerEvent: {}
+[3.569847] (-) TimerEvent: {}
+[3.670712] (-) TimerEvent: {}
+[3.771712] (-) TimerEvent: {}
+[3.872493] (-) TimerEvent: {}
+[3.973309] (-) TimerEvent: {}
+[4.074092] (-) TimerEvent: {}
+[4.174901] (-) TimerEvent: {}
+[4.275921] (-) TimerEvent: {}
+[4.378377] (-) TimerEvent: {}
+[4.480615] (-) TimerEvent: {}
+[4.582829] (-) TimerEvent: {}
+[4.685544] (-) TimerEvent: {}
+[4.787267] (-) TimerEvent: {}
+[4.888036] (-) TimerEvent: {}
+[4.989697] (-) TimerEvent: {}
+[5.091086] (-) TimerEvent: {}
+[5.191878] (-) TimerEvent: {}
+[5.292644] (-) TimerEvent: {}
+[5.393995] (-) TimerEvent: {}
+[5.497263] (-) TimerEvent: {}
+[5.601448] (-) TimerEvent: {}
+[5.705335] (-) TimerEvent: {}
+[5.808660] (-) TimerEvent: {}
+[5.911952] (control) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', 'build/control', 'build', '--build-base', '/home/rasp4/swarm_robots/algorithm/src/control/build/control/build', 'install', '--record', '/home/rasp4/swarm_robots/algorithm/src/control/build/control/install.log', '--install-scripts', '$base/lib/control', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/rasp4/swarm_robots/algorithm/src/control', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'QT_SCALE_FACTOR': '1', 'LANGUAGE': 'en_US', 'USER': 'rasp4', 'LC_TIME': 'vi_VN', 'XDG_SEAT': 'seat0', 'XDG_SESSION_TYPE': 'x11', 'COMPIZ_CONFIG_PROFILE': 'mate', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/rasp4', 'OLDPWD': '/home/rasp4/swarm_robots/algorithm', 'DESKTOP_SESSION': 'mate', 'ROS_PYTHON_VERSION': '3', 'GTK_MODULES': 'appmenu-gtk-module:gail:atk-bridge:canberra-gtk-module', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'LC_MONETARY': 'vi_VN', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'UBUNTU_MENUPROXY': '1', 'QT_QPA_PLATFORMTHEME': 'gtk2', 'ROS_DISTRO': 'humble', 'LOGNAME': 'rasp4', 'WINDOWID': '60817414', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'GTK_OVERLAY_SCROLLING': '0', 'XDG_SESSION_ID': 'c2', 'ROS_LOCALHOST_ONLY': '0', 'INSIDE_CAJA_PYTHON': '', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/rasp4-desktop:@/tmp/.ICE-unix/1699,unix/rasp4-desktop:/tmp/.ICE-unix/1699', 'GDM_LANG': 'en_US', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session0', 'LC_ADDRESS': 'vi_VN', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'MATE', 'LC_TELEPHONE': 'vi_VN', 'XDG_SESSION_DESKTOP': 'mate', 'XAUTHORITY': '/home/rasp4/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'XDG_GREETER_DATA_DIR': '/var/lib/lightdm-data/rasp4', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'vi_VN', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'mate', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'vi_VN', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'LC_IDENTIFICATION': 'vi_VN', 'XDG_VTNR': '7', 'PWD': '/home/rasp4/swarm_robots/algorithm/src/control/build/control', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-mate:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/mate:/home/rasp4/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/rasp4/swarm_robots/algorithm/src/control/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rasp4/swarm_robots/algorithm/src/control/install/control/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'vi_VN', 'MATE_DESKTOP_SESSION_ID': 'this-is-deprecated', 'LC_PAPER': 'vi_VN', 'COLCON': '1', 'VTE_VERSION': '6800', 'QT_FONT_DPI': '96'}, 'shell': False}
+[5.925028] (-) TimerEvent: {}
+[6.026320] (-) TimerEvent: {}
+[6.127844] (-) TimerEvent: {}
+[6.231394] (-) TimerEvent: {}
+[6.336417] (-) TimerEvent: {}
+[6.437519] (-) TimerEvent: {}
+[6.538839] (-) TimerEvent: {}
+[6.641442] (-) TimerEvent: {}
+[6.742257] (-) TimerEvent: {}
+[6.843241] (-) TimerEvent: {}
+[6.944044] (-) TimerEvent: {}
+[7.046169] (-) TimerEvent: {}
+[7.147654] (-) TimerEvent: {}
+[7.250097] (-) TimerEvent: {}
+[7.352063] (-) TimerEvent: {}
+[7.452872] (-) TimerEvent: {}
+[7.554001] (-) TimerEvent: {}
+[7.654962] (-) TimerEvent: {}
+[7.755735] (-) TimerEvent: {}
+[7.856884] (-) TimerEvent: {}
+[7.957890] (-) TimerEvent: {}
+[7.968903] (control) StderrLine: {'line': b"/usr/lib/python3/dist-packages/setuptools/dist.py:723: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead\n"}
+[7.970323] (control) StderrLine: {'line': b'  warnings.warn(\n'}
+[8.032114] (control) StdoutLine: {'line': b'running egg_info\n'}
+[8.039478] (control) StdoutLine: {'line': b'writing build/control/control.egg-info/PKG-INFO\n'}
+[8.040902] (control) StdoutLine: {'line': b'writing dependency_links to build/control/control.egg-info/dependency_links.txt\n'}
+[8.042053] (control) StdoutLine: {'line': b'writing entry points to build/control/control.egg-info/entry_points.txt\n'}
+[8.043206] (control) StdoutLine: {'line': b'writing requirements to build/control/control.egg-info/requires.txt\n'}
+[8.045512] (control) StdoutLine: {'line': b'writing top-level names to build/control/control.egg-info/top_level.txt\n'}
+[8.058115] (-) TimerEvent: {}
+[8.059160] (control) StdoutLine: {'line': b"reading manifest file 'build/control/control.egg-info/SOURCES.txt'\n"}
+[8.067520] (control) StdoutLine: {'line': b"writing manifest file 'build/control/control.egg-info/SOURCES.txt'\n"}
+[8.069954] (control) StdoutLine: {'line': b'running build\n'}
+[8.070946] (control) StdoutLine: {'line': b'running build_py\n'}
+[8.071850] (control) StdoutLine: {'line': b'running install\n'}
+[8.073415] (control) StdoutLine: {'line': b'running install_lib\n'}
+[8.085048] (control) StdoutLine: {'line': b'running install_data\n'}
+[8.086418] (control) StdoutLine: {'line': b'copying resource/control -> /home/rasp4/swarm_robots/algorithm/src/control/install/control/share/ament_index/resource_index/packages\n'}
+[8.088023] (control) StdoutLine: {'line': b'copying package.xml -> /home/rasp4/swarm_robots/algorithm/src/control/install/control/share/control\n'}
+[8.088921] (control) StdoutLine: {'line': b'running install_egg_info\n'}
+[8.102713] (control) StdoutLine: {'line': b'Copying build/control/control.egg-info to /home/rasp4/swarm_robots/algorithm/src/control/install/control/lib/python3.10/site-packages/control-0.0.0-py3.10.egg-info\n'}
+[8.109005] (control) StdoutLine: {'line': b'running install_scripts\n'}
+[8.158417] (-) TimerEvent: {}
+[8.249006] (control) StdoutLine: {'line': b'Installing navigation_process script to /home/rasp4/swarm_robots/algorithm/src/control/install/control/lib/control\n'}
+[8.250100] (control) StdoutLine: {'line': b'Installing odom script to /home/rasp4/swarm_robots/algorithm/src/control/install/control/lib/control\n'}
+[8.251256] (control) StdoutLine: {'line': b'Installing send_vel script to /home/rasp4/swarm_robots/algorithm/src/control/install/control/lib/control\n'}
+[8.255378] (control) StdoutLine: {'line': b"writing list of installed files to '/home/rasp4/swarm_robots/algorithm/src/control/build/control/install.log'\n"}
+[8.258950] (-) TimerEvent: {}
+[8.365405] (-) TimerEvent: {}
+[8.469052] (-) TimerEvent: {}
+[8.537986] (control) CommandEnded: {'returncode': 0}
+[8.570164] (-) TimerEvent: {}
+[8.645251] (control) JobEnded: {'identifier': 'control', 'rc': 0}
+[8.655424] (-) EventReactorShutdown: {}

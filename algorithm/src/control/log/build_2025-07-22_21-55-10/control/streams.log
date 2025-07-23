@@ -1,0 +1,26 @@
+[5.919s] Invoking command in '/home/rasp4/swarm_robots/algorithm/src/control': PYTHONPATH=/home/rasp4/swarm_robots/algorithm/src/control/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rasp4/swarm_robots/algorithm/src/control/install/control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/control build --build-base /home/rasp4/swarm_robots/algorithm/src/control/build/control/build install --record /home/rasp4/swarm_robots/algorithm/src/control/build/control/install.log --install-scripts $base/lib/control --single-version-externally-managed install_data
+[7.965s] /usr/lib/python3/dist-packages/setuptools/dist.py:723: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+[7.966s]   warnings.warn(
+[8.029s] running egg_info
+[8.035s] writing build/control/control.egg-info/PKG-INFO
+[8.036s] writing dependency_links to build/control/control.egg-info/dependency_links.txt
+[8.037s] writing entry points to build/control/control.egg-info/entry_points.txt
+[8.039s] writing requirements to build/control/control.egg-info/requires.txt
+[8.042s] writing top-level names to build/control/control.egg-info/top_level.txt
+[8.055s] reading manifest file 'build/control/control.egg-info/SOURCES.txt'
+[8.063s] writing manifest file 'build/control/control.egg-info/SOURCES.txt'
+[8.066s] running build
+[8.066s] running build_py
+[8.067s] running install
+[8.069s] running install_lib
+[8.081s] running install_data
+[8.083s] copying resource/control -> /home/rasp4/swarm_robots/algorithm/src/control/install/control/share/ament_index/resource_index/packages
+[8.084s] copying package.xml -> /home/rasp4/swarm_robots/algorithm/src/control/install/control/share/control
+[8.084s] running install_egg_info
+[8.098s] Copying build/control/control.egg-info to /home/rasp4/swarm_robots/algorithm/src/control/install/control/lib/python3.10/site-packages/control-0.0.0-py3.10.egg-info
+[8.104s] running install_scripts
+[8.245s] Installing navigation_process script to /home/rasp4/swarm_robots/algorithm/src/control/install/control/lib/control
+[8.246s] Installing odom script to /home/rasp4/swarm_robots/algorithm/src/control/install/control/lib/control
+[8.247s] Installing send_vel script to /home/rasp4/swarm_robots/algorithm/src/control/install/control/lib/control
+[8.253s] writing list of installed files to '/home/rasp4/swarm_robots/algorithm/src/control/build/control/install.log'
+[8.535s] Invoked command in '/home/rasp4/swarm_robots/algorithm/src/control' returned '0': PYTHONPATH=/home/rasp4/swarm_robots/algorithm/src/control/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rasp4/swarm_robots/algorithm/src/control/install/control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/control build --build-base /home/rasp4/swarm_robots/algorithm/src/control/build/control/build install --record /home/rasp4/swarm_robots/algorithm/src/control/build/control/install.log --install-scripts $base/lib/control --single-version-externally-managed install_data

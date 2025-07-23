@@ -1,0 +1,24 @@
+/usr/lib/python3/dist-packages/setuptools/dist.py:723: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+  warnings.warn(
+running egg_info
+writing build/control/control.egg-info/PKG-INFO
+writing dependency_links to build/control/control.egg-info/dependency_links.txt
+writing entry points to build/control/control.egg-info/entry_points.txt
+writing requirements to build/control/control.egg-info/requires.txt
+writing top-level names to build/control/control.egg-info/top_level.txt
+reading manifest file 'build/control/control.egg-info/SOURCES.txt'
+writing manifest file 'build/control/control.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+copying resource/control -> /home/rasp4/swarm_robots/algorithm/src/control/install/control/share/ament_index/resource_index/packages
+copying package.xml -> /home/rasp4/swarm_robots/algorithm/src/control/install/control/share/control
+running install_egg_info
+Copying build/control/control.egg-info to /home/rasp4/swarm_robots/algorithm/src/control/install/control/lib/python3.10/site-packages/control-0.0.0-py3.10.egg-info
+running install_scripts
+Installing navigation_process script to /home/rasp4/swarm_robots/algorithm/src/control/install/control/lib/control
+Installing odom script to /home/rasp4/swarm_robots/algorithm/src/control/install/control/lib/control
+Installing send_vel script to /home/rasp4/swarm_robots/algorithm/src/control/install/control/lib/control
+writing list of installed files to '/home/rasp4/swarm_robots/algorithm/src/control/build/control/install.log'
