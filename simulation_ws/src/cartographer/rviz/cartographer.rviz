@@ -47,11 +47,11 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        origin_link:
+        base_link:
           Value: true
         laser_frame:
           Value: true
-        base_link:
+        chassis:
           Value: true
         map:
           Value: true
@@ -73,7 +73,7 @@ Visualization Manager:
       Tree:
         map:
           odom:
-            origin_link:
+            base_link:
               left_wheel:
                 {}
               right_wheel:
@@ -82,7 +82,7 @@ Visualization Manager:
                 {}
               back_passive_wheel:
                 {}
-              base_link:
+              chassis:
                 laser_frame:             
       Update Interval: 0
       Value: true

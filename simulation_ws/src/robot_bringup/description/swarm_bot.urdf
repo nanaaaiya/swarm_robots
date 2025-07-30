@@ -13,6 +13,7 @@
       <ros>
         <namespace>robot_namespace</namespace>
         <param name="robot_description" value="robot_description" />
+        <!-- <remapping>cmd_vel:=/cmd_vel</remapping> -->
       </ros>
       <!-- Wheel Information -->
       <left_joint>left_wheel_joint</left_joint>
@@ -24,10 +25,10 @@
       <max_wheel_acceleration>10.0</max_wheel_acceleration>
       <!-- Output -->
       <odometry_frame>odom</odometry_frame>
-      <robot_base_frame>origin_link</robot_base_frame>
-      <publish_odom>true</publish_odom>
+      <robot_base_frame>base_link</robot_base_frame>
+      <!-- <publish_odom>true</publish_odom>
       <publish_odom_tf>true</publish_odom_tf>
-      <publish_wheel_tf>true</publish_wheel_tf>
+      <publish_wheel_tf>true</publish_wheel_tf> -->
     </plugin>
   </gazebo>
   <link name="laser_frame">
@@ -51,7 +52,7 @@
     </inertial>
   </link>
   <joint name="laser_joint" type="fixed">
-    <parent link="base_link"/>
+    <parent link="chassis"/>
     <child link="laser_frame"/>
     <origin rpy="0 0 0" xyz="0 0 0.205"/>
   </joint>
@@ -87,10 +88,10 @@
   </gazebo>
   <!-- LINKS -->
   <!-- Origin -->
-  <link name="origin_link">
+  <link name="base_link">
     </link>
   <!-- Base -->
-  <link name="base_link">
+  <link name="chassis">
     <visual>
       <!-- change the position of the visualization only, not the axis -->
       <origin rpy="0 0 0" xyz="0 0 0.1075"/>
@@ -114,7 +115,7 @@
       <inertia ixx="0.002368625" ixy="0.0" ixz="0.0" iyy="0.002368625" iyz="0.0" izz="0.0028622499999999998"/>
     </inertial>
   </link>
-  <gazebo reference="base_link">
+  <gazebo reference="chassis">
     <material>Gazebo/White</material>
   </gazebo>
   <!-- Left Wheel -->
@@ -221,13 +222,13 @@
   <!-- JOINTS-->
   <!-- Base -->
   <joint name="origin_joint" type="fixed">
-    <parent link="origin_link"/>
-    <child link="base_link"/>
+    <parent link="base_link"/>
+    <child link="chassis"/>
     <origin xyz="0 0 -0.0325"/>
   </joint>
   <!-- Left Wheel -->
   <joint name="right_wheel_joint" type="continuous">
-    <parent link="origin_link"/>
+    <parent link="base_link"/>
     <child link="right_wheel"/>
     <!-- rotate wheel 90 deg around x-axis -->
     <origin rpy="-1.5707963267948966 0 0" xyz="0 -0.107 0"/>
@@ -235,20 +236,20 @@
   </joint>
   <!-- Right Wheel -->
   <joint name="left_wheel_joint" type="continuous">
-    <parent link="origin_link"/>
+    <parent link="base_link"/>
     <child link="left_wheel"/>
     <origin rpy="1.5707963267948966 0 0" xyz="0 0.107 0"/>
     <axis xyz="0 0 -1"/>
   </joint>
   <!-- Front Passive Wheel -->
   <joint name="front_passive_wheel_joint" type="fixed">
-    <parent link="origin_link"/>
+    <parent link="base_link"/>
     <child link="front_passive_wheel"/>
     <origin rpy="0 0 0" xyz="0.067 0 -0.0085"/>
   </joint>
   <!-- Back Passive Wheel -->
   <joint name="back_passive_wheel_joint" type="fixed">
-    <parent link="origin_link"/>
+    <parent link="base_link"/>
     <child link="back_passive_wheel"/>
     <origin rpy="0 0 0" xyz="-0.067 0 -0.0083"/>
   </joint>

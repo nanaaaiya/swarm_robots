@@ -183,6 +183,7 @@ def generate_launch_description():
                           'params_file': params_file,
                           'default_bt_xml_filename': default_bt_xml_filename,
                           'autostart': autostart}.items())
+    
     static_tf_map_to_odom = Node(
         package='tf2_ros',
         executable='static_transform_publisher',
