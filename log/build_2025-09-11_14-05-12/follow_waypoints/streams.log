@@ -1,0 +1,27 @@
+[1.170s] Invoking command in '/home/hehe/Documents/GitHub/swarm_robots/build/follow_waypoints': PYTHONPATH=/home/hehe/Documents/GitHub/swarm_robots/build/follow_waypoints/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/hehe/Documents/GitHub/swarm_robots/build/follow_waypoints/build --no-deps symlink_data
+[1.489s] running develop
+[1.665s] running egg_info
+[1.666s] creating follow_waypoints.egg-info
+[1.666s] writing follow_waypoints.egg-info/PKG-INFO
+[1.666s] writing dependency_links to follow_waypoints.egg-info/dependency_links.txt
+[1.666s] writing entry points to follow_waypoints.egg-info/entry_points.txt
+[1.666s] writing requirements to follow_waypoints.egg-info/requires.txt
+[1.666s] writing top-level names to follow_waypoints.egg-info/top_level.txt
+[1.666s] writing manifest file 'follow_waypoints.egg-info/SOURCES.txt'
+[1.669s] reading manifest file 'follow_waypoints.egg-info/SOURCES.txt'
+[1.671s] writing manifest file 'follow_waypoints.egg-info/SOURCES.txt'
+[1.671s] running build_ext
+[1.671s] Creating /home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/lib/python3.10/site-packages/follow-waypoints.egg-link (link to .)
+[1.674s] Installing follow_waypoints_exe script to /home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/lib/follow_waypoints
+[1.674s] Installing follow_waypoints_multi script to /home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/lib/follow_waypoints
+[1.674s] 
+[1.675s] Installed /home/hehe/Documents/GitHub/swarm_robots/build/follow_waypoints
+[1.675s] running symlink_data
+[1.675s] creating /home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/share/ament_index
+[1.675s] creating /home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/share/ament_index/resource_index
+[1.675s] creating /home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/share/ament_index/resource_index/packages
+[1.675s] symbolically linking /home/hehe/Documents/GitHub/swarm_robots/build/follow_waypoints/resource/follow_waypoints -> /home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/share/ament_index/resource_index/packages
+[1.675s] symbolically linking /home/hehe/Documents/GitHub/swarm_robots/build/follow_waypoints/package.xml -> /home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/share/follow_waypoints
+[1.675s] creating /home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/share/follow_waypoints/config
+[1.675s] symbolically linking /home/hehe/Documents/GitHub/swarm_robots/build/follow_waypoints/config/follow_waypoints.yaml -> /home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/share/follow_waypoints/config
+[2.075s] Invoked command in '/home/hehe/Documents/GitHub/swarm_robots/build/follow_waypoints' returned '0': PYTHONPATH=/home/hehe/Documents/GitHub/swarm_robots/build/follow_waypoints/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/hehe/Documents/GitHub/swarm_robots/build/follow_waypoints/build --no-deps symlink_data

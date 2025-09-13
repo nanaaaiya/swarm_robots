@@ -1,0 +1,55 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/hehe/Documents/GitHub/swarm_robots/build/robot_bringup
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup//description/gazebo_control.xacro
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup//description/inertial_macros.xacro
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup//description/lidar.xacro
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup//description/swarm_bot.urdf
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup//description/swarm_bot.xacro
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup//launch/multi_robots_setup.py
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup//launch/multi_robots_spawn.launch.py
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup//launch/robot_spawn.launch.py
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup//launch/robot_spawn_position.py
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup//launch/robot_spawn_tf.py
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup//launch/tf_broadcaster.py
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup//worlds/obstacle.worlds
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup//worlds/swarm_world.worlds
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/lib/robot_bringup/robot_spawn_position.py
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/lib/robot_bringup/robot_spawn_tf.py
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/ament_index/resource_index/package_run_dependencies/robot_bringup
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/ament_index/resource_index/parent_prefix_path/robot_bringup
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.sh
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.dsv
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup/environment/path.sh
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup/environment/path.dsv
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup/local_setup.bash
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup/local_setup.sh
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup/local_setup.zsh
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup/local_setup.dsv
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup/package.dsv
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/ament_index/resource_index/packages/robot_bringup
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig.cmake
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig-version.cmake
+-- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/robot_bringup/share/robot_bringup/package.xml

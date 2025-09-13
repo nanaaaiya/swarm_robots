@@ -1,0 +1,6 @@
+[console_scripts]
+navigation_process = slave.navigation_process:main
+odom = slave.odometry:main
+send_vel = slave.cmd_vel:main
+waypoint_navigator = slave.waypoint_navigator:main
+

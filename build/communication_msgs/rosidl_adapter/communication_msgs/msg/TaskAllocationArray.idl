@@ -1,0 +1,13 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from communication_msgs/msg/TaskAllocationArray.msg
+// generated code does not contain a copyright notice
+
+#include "communication_msgs/msg/TaskAllocation.idl"
+
+module communication_msgs {
+  module msg {
+    struct TaskAllocationArray {
+      sequence<communication_msgs::msg::TaskAllocation> tasks;
+    };
+  };
+};

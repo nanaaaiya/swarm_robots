@@ -1,0 +1,1 @@
+/home/hehe/Documents/GitHub/swarm_robots/build/communication_msgs/rosidl_generator_cpp/communication_msgs/msg/detail/robot_status__type_support.hpp

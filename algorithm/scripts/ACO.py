@@ -6,12 +6,27 @@ from scipy.spatial.distance import cdist
 # Problem Setup
 # --------------------------
 n_robots = 3
-m_tasks = 5
+# m_tasks = 5
+m_tasks = 9
 
 np.random.seed(42)
-robot_positions = np.random.rand(n_robots, 2) * 10
-task_positions = np.random.rand(m_tasks, 2) * 10
+# robot_positions = np.random.rand(n_robots, 2) * 10
+# task_positions = np.random.rand(m_tasks, 2) * 10
+# dropoff_positions = np.random.rand(m_tasks, 2) * 10
+
+task_positions = [
+    (0.5, 0.0), (2.0, 0.0), (2.0, 2.0), (4.5, 0.0), (3.0, -1.0),
+    (3.0, -2.0), (0.0, 1.0), (0.5, 1.0), (0.5, 1.0)  # New tasks
+]
 dropoff_positions = np.random.rand(m_tasks, 2) * 10
+
+# Initial robot positions
+robot_positions = np.array([
+    (0.0, 0.0),  # tb1
+    (5.0, 0.0),  # tb2
+    (0.0, 4.0)   # tb3
+])
+
 
 # Compute distance matrices
 dist_task = cdist(robot_positions, task_positions)        # Robot to task
@@ -118,60 +133,79 @@ aco_task_order, aco_assignment, aco_total_cost, aco_robot_distances = aco.run()
 # Results Output
 # --------------------------
 
-print("\n=== Ant Colony Optimization (ACO) ===")
-for i in range(n_robots):
-    assigned_tasks = np.where(aco_assignment == i)[0]
-    ordered_tasks = aco_task_order[np.isin(aco_task_order, assigned_tasks)]
-    if len(ordered_tasks) == 0:
-        print(f"Robot {i}: No tasks assigned | Total Distance: 0.00")
-    else:
-        path_str = []
-        for task in ordered_tasks:
-            path_str.append(f"Pick Task {task}")
-            path_str.append(f"Drop Task {task}")
-        print(f"Robot {i}: {' → '.join(path_str)} | Total Distance: {aco_robot_distances[i]:.2f}")
-print(f"Total Distance (ACO): {aco_total_cost:.2f}")
+# print("\n=== Ant Colony Optimization (ACO) ===")
+# for i in range(n_robots):
+#     assigned_tasks = np.where(aco_assignment == i)[0]
+#     ordered_tasks = aco_task_order[np.isin(aco_task_order, assigned_tasks)]
+#     if len(ordered_tasks) == 0:
+#         print(f"Robot {i}: No tasks assigned | Total Distance: 0.00")
+#     else:
+#         path_str = []
+#         for task in ordered_tasks:
+#             path_str.append(f"Pick Task {task}")
+#             path_str.append(f"Drop Task {task}")
+#         print(f"Robot {i}: {' → '.join(path_str)} | Total Distance: {aco_robot_distances[i]:.2f}")
+# print(f"Total Distance (ACO): {aco_total_cost:.2f}")
 
-# --------------------------
-# Visualization
-# --------------------------
-plt.figure(figsize=(10, 8))
-colors = ['blue', 'green', 'purple']
+print("\n=== ACO Result: WAYPOINTS Format ===")
 
-# Plot robots, tasks, and drop-offs
-for i, pos in enumerate(robot_positions):
-    plt.scatter(*pos, color=colors[i], s=200, edgecolors='black', label=f'Robot {i}')
-for j, pos in enumerate(task_positions):
-    plt.scatter(*pos, color='red', marker='s', s=100, edgecolors='black', label='Task' if j == 0 else "")
-for j, pos in enumerate(dropoff_positions):
-    plt.scatter(*pos, color='orange', marker='D', s=100, edgecolors='black', label='Drop-off' if j == 0 else "")
+waypoints = {f"tb{i+1}": [] for i in range(n_robots)}
 
-# Plot ACO routes
-aco_routes = {}
 for i in range(n_robots):
     assigned_tasks = np.where(aco_assignment == i)[0]
     ordered_tasks = aco_task_order[np.isin(aco_task_order, assigned_tasks)]
     if len(ordered_tasks) > 0:
-        route = []
         for task in ordered_tasks:
-            route.append(task)           # Pickup
-            route.append(task + m_tasks) # Drop-off
-        aco_routes[i] = route
+            task_pos = task_positions[task]
+            waypoints[f"tb{i+1}"].append(tuple(task_pos))  # Add task position as waypoint
 
-for i, route in aco_routes.items():
-    if route:
-        path = [robot_positions[i]]
-        for idx in route:
-            if idx < m_tasks:
-                path.append(task_positions[idx])
-            else:
-                path.append(dropoff_positions[idx - m_tasks])
-        path_x, path_y = zip(*path)
-        plt.plot(path_x, path_y, color=colors[i], linestyle='-', marker='o', lw=2, label=f"Robot {i} Route")
+# Print WAYPOINTS in the desired format for copy-pasting
+print("WAYPOINTS = {")
+for robot, wp_list in waypoints.items():
+    wp_str = ", ".join([f"({x:.1f}, {y:.1f}, 0.0)" for x, y in wp_list])
+    print(f'    "{robot}": [{wp_str}],')
+print("}")
 
-plt.xlabel("X Coordinate")
-plt.ylabel("Y Coordinate")
-plt.title("ACO (Pickup → Drop-off)")
-plt.legend()
-plt.grid(True)
-plt.show()
+# --------------------------
+# Visualization
+# --------------------------
+# plt.figure(figsize=(10, 8))
+# colors = ['blue', 'green', 'purple']
+
+# # Plot robots, tasks, and drop-offs
+# for i, pos in enumerate(robot_positions):
+#     plt.scatter(*pos, color=colors[i], s=200, edgecolors='black', label=f'Robot {i}')
+# for j, pos in enumerate(task_positions):
+#     plt.scatter(*pos, color='red', marker='s', s=100, edgecolors='black', label='Task' if j == 0 else "")
+# for j, pos in enumerate(dropoff_positions):
+#     plt.scatter(*pos, color='orange', marker='D', s=100, edgecolors='black', label='Drop-off' if j == 0 else "")
+
+# # Plot ACO routes
+# aco_routes = {}
+# for i in range(n_robots):
+#     assigned_tasks = np.where(aco_assignment == i)[0]
+#     ordered_tasks = aco_task_order[np.isin(aco_task_order, assigned_tasks)]
+#     if len(ordered_tasks) > 0:
+#         route = []
+#         for task in ordered_tasks:
+#             route.append(task)           # Pickup
+#             route.append(task + m_tasks) # Drop-off
+#         aco_routes[i] = route
+
+# for i, route in aco_routes.items():
+#     if route:
+#         path = [robot_positions[i]]
+#         for idx in route:
+#             if idx < m_tasks:
+#                 path.append(task_positions[idx])
+#             else:
+#                 path.append(dropoff_positions[idx - m_tasks])
+#         path_x, path_y = zip(*path)
+#         plt.plot(path_x, path_y, color=colors[i], linestyle='-', marker='o', lw=2, label=f"Robot {i} Route")
+
+# plt.xlabel("X Coordinate")
+# plt.ylabel("Y Coordinate")
+# plt.title("ACO (Pickup → Drop-off)")
+# plt.legend()
+# plt.grid(True)
+# plt.show()
