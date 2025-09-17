@@ -84,7 +84,15 @@ def main():
             continue
         stamp = nav.get_clock().now().to_msg()
         wps = [make_pose(x, y, yaw, stamp=stamp) for (x, y, yaw) in wps_xyz]
+        from std_msgs.msg import Bool
         print(f"[{ns}] sending {len(wps)} waypoints…")
+        # publish per-robot mission_start so the tracker knows mission begins for this robot
+        try:
+            start_pub = nav.create_publisher(Bool, f'/{ns}/mission_start', 10)
+            # publish immediately
+            start_pub.publish(Bool(data=True))
+        except Exception as e:
+            print(f"[{ns}] warning: could not publish mission_start: {e}")
         nav.followWaypoints(wps)
 
     # Monitor all robots concurrently
