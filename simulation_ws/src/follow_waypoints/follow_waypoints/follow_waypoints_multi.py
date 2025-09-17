@@ -89,11 +89,14 @@ def main():
         # publish per-robot mission_start so the tracker knows mission begins for this robot
         try:
             start_pub = nav.create_publisher(Bool, f'/{ns}/mission_start', 10)
-            # publish immediately
+            stop_pub = nav.create_publisher(Bool, f'/{ns}/mission_stop', 10)
+            # publish start
             start_pub.publish(Bool(data=True))
         except Exception as e:
-            print(f"[{ns}] warning: could not publish mission_start: {e}")
+            print(f"[{ns}] warning: could not publish mission_start/stop publishers: {e}")
         nav.followWaypoints(wps)
+        # store stop_pub somewhere? you can attach to nav object:
+        nav._mission_stop_pub = stop_pub
 
     # Monitor all robots concurrently
     done = {ns: (totals.get(ns, 0) == 0) for ns in ROBOT_NAMES}
@@ -109,6 +112,11 @@ def main():
                 if nav.isTaskComplete():
                     res = nav.getResult()
                     print(f"[{ns}] result: {result_to_str(res)}")
+                    try:
+                        if hasattr(nav, '_mission_stop_pub') and nav._mission_stop_pub is not None:
+                            nav._mission_stop_pub.publish(Bool(data=True))
+                    except Exception as e:
+                        print(f"[{ns}] warning: failed to publish mission_stop: {e}")
                     done[ns] = True
     except KeyboardInterrupt:
         print("\n[main] KeyboardInterrupt → canceling active tasks…")
