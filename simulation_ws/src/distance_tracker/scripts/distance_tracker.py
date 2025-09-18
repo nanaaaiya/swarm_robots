@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 """
-ROS2 (rclpy) node to track cumulative distance and times for multiple robots.
-Supports per-robot start/stop topics (/<robot>/mission_start and /<robot>/mission_stop).
-When all robots report stop, the node writes final CSV and shuts down cleanly.
+Improved ROS2 (rclpy) distance tracker.
+
+Fixes:
+ - end_time is set ONLY by explicit stop messages (per-robot or global).
+ - uses 'stopped' flag per robot to decide when all robots finished.
+ - ensures CSV directory exists and file is flushed to disk.
+ - parameter `auto_exit_when_all_stopped` decides whether the node shuts itself down.
 """
 import rclpy
 from rclpy.node import Node
@@ -16,7 +20,6 @@ from threading import Lock
 from typing import Dict
 
 def stamp_to_float_secs(stamp):
-    """Convert builtin_interfaces/Time-like object to float seconds."""
     return float(stamp.sec) + float(stamp.nanosec) * 1e-9
 
 class RobotTracker:
@@ -31,8 +34,9 @@ class RobotTracker:
         self.last_time = None
         self.cumdist = 0.0
         self.start_time = None
-        self.end_time = None
+        self.end_time = None      # set only when stopped
         self.moving_time = 0.0
+        self.stopped = False      # <-- explicit stop flag
         self.lock = Lock()
 
     def handle_odom(self, msg: Odometry):
@@ -47,15 +51,19 @@ class RobotTracker:
         self._update(pos.x, pos.y, t, linear_speed=None)
 
     def _update(self, x, y, t, linear_speed=None):
+        """
+        Update cumulative distance and moving_time.
+        NOTE: Do NOT set end_time here. end_time belongs to STOP events only.
+        """
         with self.lock:
-            # If start_time hasn't been set at all, use this sample to set it (old behavior)
+            # If start_time hasn't been set at all, use this sample to set it (default behavior)
             if self.start_time is None:
                 self.start_time = t
                 self.last_time = t
                 self.last_pos = (x, y)
                 return
 
-            # If start_time is set but we haven't recorded a last_pos (e.g. per-robot start reset),
+            # If start_time is set but we haven't recorded a last_pos (e.g. after explicit start reset),
             # initialize last_pos/last_time from this first incoming sample and do not compute distance yet.
             if self.last_pos is None or self.last_time is None:
                 self.last_pos = (x, y)
@@ -79,7 +87,7 @@ class RobotTracker:
 
             self.last_pos = (x, y)
             self.last_time = t
-            self.end_time = t
+            # DO NOT set self.end_time here
 
     def get_summary(self):
         with self.lock:
@@ -97,19 +105,22 @@ class RobotTracker:
                 'total_time': float(total_time),
                 'moving_time': float(self.moving_time),
                 'start_time': self.start_time,
-                'end_time': self.end_time
+                'end_time': self.end_time,
+                'stopped': self.stopped
             }
 
 class TeamDistanceTrackerNode(Node):
     def __init__(self):
         super().__init__('team_distance_tracker')
-        # declare parameters
+        # params
         self.declare_parameter('robot_list', ['tb1','tb2','tb3'])
         self.declare_parameter('topic_prefix', '')
         self.declare_parameter('pose_topic_suffix', '/odom')
         self.declare_parameter('msg_type', 'odom')  # 'odom' or 'pose'
         self.declare_parameter('velocity_threshold', 0.05)
-        self.declare_parameter('output_csv', '/tmp/robot_metrics.csv')
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        default_csv = os.path.join(script_dir, "robot_metrics.csv")
+        self.declare_parameter('output_csv', default_csv)
         self.declare_parameter('start_on_topic', False)
         self.declare_parameter('start_topic_name', '/mission_start')
         self.declare_parameter('stop_on_topic', False)
@@ -118,17 +129,20 @@ class TeamDistanceTrackerNode(Node):
 
         # per-robot start/stop support
         self.declare_parameter('use_per_robot_start_topic', True)
-        self.declare_parameter('per_robot_start_topic_prefix', '/')   # e.g. "/" -> "/tb1/mission_start"
+        self.declare_parameter('per_robot_start_topic_prefix', '/')
         self.declare_parameter('per_robot_start_topic_suffix', 'mission_start')
         self.declare_parameter('use_per_robot_stop_topic', True)
         self.declare_parameter('per_robot_stop_topic_suffix', 'mission_stop')
 
+        # auto-exit when all robots have stopped
+        self.declare_parameter('auto_exit_when_all_stopped', True)
+
         # shutdown guard
         self._shutdown_called = False
 
-        # get params (defensive)
+        # read params (defensive)
         pl_param = self.get_parameter('robot_list').get_parameter_value()
-        if pl_param.type == 17:  # string_array
+        if pl_param.type == 17:
             robot_list = pl_param.string_array_value
         else:
             robot_list = self.get_parameter('robot_list').value
@@ -152,6 +166,8 @@ class TeamDistanceTrackerNode(Node):
         self.use_per_robot_stop_topic = self.get_parameter('use_per_robot_stop_topic').value
         self.per_robot_stop_topic_suffix = self.get_parameter('per_robot_stop_topic_suffix').value
 
+        self.auto_exit_when_all_stopped = self.get_parameter('auto_exit_when_all_stopped').value
+
         # trackers & subscriptions
         self.trackers: Dict[str, RobotTracker] = {}
         for r in robot_list:
@@ -166,7 +182,7 @@ class TeamDistanceTrackerNode(Node):
             else:
                 self.create_subscription(PoseStamped, topic, tracker.handle_pose, 10)
 
-        # optional global start/stop
+        # global start/stop
         if self.start_on_topic:
             self.create_subscription(Bool, self.start_topic_name, self._start_cb, 10)
             self.get_logger().info(f"Listening for global mission start on {self.start_topic_name}")
@@ -204,7 +220,7 @@ class TeamDistanceTrackerNode(Node):
         self.writer_timer = self.create_timer(write_interval, self._periodic_write)
         self.get_logger().info("team_distance_tracker (ROS2) ready.")
 
-    # global start callback (starts/resets all trackers)
+    # global start: reset all
     def _start_cb(self, msg: Bool):
         if msg.data:
             now_msg = self.get_clock().now().to_msg()
@@ -216,9 +232,11 @@ class TeamDistanceTrackerNode(Node):
                     t.last_pos = None
                     t.cumdist = 0.0
                     t.moving_time = 0.0
+                    t.stopped = False
+                    t.end_time = None
             self.get_logger().info(f"Global Mission START at {now:.3f}")
 
-    # per-robot start callback
+    # per-robot start
     def _robot_start_cb(self, robot_name: str, msg: Bool):
         if not msg.data:
             return
@@ -234,9 +252,11 @@ class TeamDistanceTrackerNode(Node):
             t.last_pos = None
             t.cumdist = 0.0
             t.moving_time = 0.0
+            t.stopped = False
+            t.end_time = None
         self.get_logger().info(f"Mission START for {robot_name} at {now:.3f}")
 
-    # per-robot stop callback
+    # per-robot stop
     def _robot_stop_cb(self, robot_name: str, msg: Bool):
         if not msg.data:
             return
@@ -248,13 +268,14 @@ class TeamDistanceTrackerNode(Node):
         t = self.trackers[robot_name]
         with t.lock:
             t.end_time = now
+            t.stopped = True
         self.get_logger().info(f"Mission STOP for {robot_name} at {now:.3f}")
-        # if all robots have stopped, attempt shutdown
-        if self._all_robots_stopped():
+
+        if self.auto_exit_when_all_stopped and self._all_robots_stopped():
             self.get_logger().info("All robots reported STOP — shutting down tracker.")
             self._attempt_shutdown()
 
-    # global stop callback (stops all trackers)
+    # global stop
     def _stop_cb(self, msg: Bool):
         if msg.data:
             now_msg = self.get_clock().now().to_msg()
@@ -262,31 +283,28 @@ class TeamDistanceTrackerNode(Node):
             for t in self.trackers.values():
                 with t.lock:
                     t.end_time = now
+                    t.stopped = True
             self.get_logger().info(f"Global Mission STOP at {now:.3f}")
             self._write_csv(final=True)
-            self._attempt_shutdown()
+            if self.auto_exit_when_all_stopped:
+                self._attempt_shutdown()
 
     def _all_robots_stopped(self):
-        # True when every tracker has a non-None end_time
         for t in self.trackers.values():
-            if t.end_time is None:
+            if not t.stopped:
                 return False
         return True
 
     def _attempt_shutdown(self):
-        # ensure we only shutdown once
         if self._shutdown_called:
             return
         self._shutdown_called = True
-        # write final CSV
+        # final write
         self._write_csv(final=True)
-        # small log then shutdown
         try:
-            # give ROS a moment to flush logs (not strictly necessary)
             self.get_logger().info("Tracker initiating rclpy.shutdown()")
         except Exception:
             pass
-        # call shutdown; spinning will end
         try:
             rclpy.shutdown()
         except Exception:
@@ -296,10 +314,20 @@ class TeamDistanceTrackerNode(Node):
         self._write_csv(final=False)
 
     def _write_csv(self, final=False):
-        header = ['robot','timestamp','cumdist_m','total_time_s','moving_time_s','start_time','end_time']
-        write_header = not os.path.exists(self.output_csv)
+        header = ['robot','timestamp','cumdist_m','total_time_s','moving_time_s','start_time','end_time','stopped']
+        # ensure directory exists
+        outpath = os.path.abspath(self.output_csv)
+        outdir = os.path.dirname(outpath)
         try:
-            with open(self.output_csv, 'a', newline='') as f:
+            if not os.path.isdir(outdir):
+                os.makedirs(outdir, exist_ok=True)
+        except Exception as e:
+            self.get_logger().error(f"Could not create output directory '{outdir}': {e}")
+            return
+
+        write_header = not os.path.exists(outpath)
+        try:
+            with open(outpath, 'a', newline='') as f:
                 writer = csv.writer(f)
                 if write_header:
                     writer.writerow(header)
@@ -307,14 +335,21 @@ class TeamDistanceTrackerNode(Node):
                 ts = float(now_msg.sec) + float(now_msg.nanosec) * 1e-9
                 for name, t in self.trackers.items():
                     s = t.get_summary()
-                    writer.writerow([name, ts, s['cumdist'], s['total_time'], s['moving_time'], s['start_time'], s['end_time']])
+                    writer.writerow([name, ts, s['cumdist'], s['total_time'], s['moving_time'], s['start_time'], s['end_time'], s.get('stopped', False)])
+                # ensure it's flushed to disk
+                try:
+                    f.flush()
+                    os.fsync(f.fileno())
+                except Exception:
+                    pass
             if final:
-                self.get_logger().info(f"Final metrics written to {self.output_csv}")
+                self.get_logger().info(f"Final metrics written to {outpath}")
+            else:
+                self.get_logger().debug(f"Periodic metrics written to {outpath}")
         except Exception as e:
-            self.get_logger().error(f"Failed to write CSV: {e}")
+            self.get_logger().error(f"Failed to write CSV '{outpath}': {e}")
 
     def on_shutdown(self):
-        # ensure we don't double-run finalization if _attempt_shutdown already did it
         if not self._shutdown_called:
             try:
                 self.get_logger().info("Shutting down — writing final CSV and summary.")
@@ -326,7 +361,7 @@ class TeamDistanceTrackerNode(Node):
         for name, t in self.trackers.items():
             s = t.get_summary()
             try:
-                self.get_logger().info(f"{name} | dist={s['cumdist']:.3f} m | total_time={s['total_time']:.2f} s | moving={s['moving_time']:.2f} s")
+                self.get_logger().info(f"{name} | dist={s['cumdist']:.3f} m | total_time={s['total_time']:.2f} s | moving={s['moving_time']:.2f} s | stopped={s.get('stopped', False)}")
             except Exception:
                 pass
             total_team_dist += s['cumdist']
@@ -341,10 +376,8 @@ def main(args=None):
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:
-        # user ctrl-c
         pass
     finally:
-        # only run node.on_shutdown() if shutdown hasn't already been performed
         try:
             if not node._shutdown_called:
                 node.on_shutdown()
@@ -354,7 +387,6 @@ def main(args=None):
             node.destroy_node()
         except Exception:
             pass
-        # rclpy.shutdown may have been called already by _attempt_shutdown()
         try:
             if rclpy.ok():
                 rclpy.shutdown()
