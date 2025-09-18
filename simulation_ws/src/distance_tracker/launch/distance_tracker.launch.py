@@ -7,7 +7,7 @@ def generate_launch_description():
         'pose_topic_suffix': '/odom',
         'msg_type': 'odom',
         'use_per_robot_start_topic': True,
-        'output_csv': '/tmp/robot_metrics.csv',
+        'output_csv': '/home/hehe/Documents/GitHub/swarm_robots/simulation_ws/src/distance_tracker/robot_metrics.csv',
     }
     return LaunchDescription([
         Node(

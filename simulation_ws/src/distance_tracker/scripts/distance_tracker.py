@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Improved ROS2 (rclpy) distance tracker.
+ROS2 (rclpy) distance tracker — writes final CSV in project folder with:
+  robot, total distance (km), total time (s)
+and a Total row summing the three robots.
 
-Fixes:
- - end_time is set ONLY by explicit stop messages (per-robot or global).
- - uses 'stopped' flag per robot to decide when all robots finished.
- - ensures CSV directory exists and file is flushed to disk.
- - parameter `auto_exit_when_all_stopped` decides whether the node shuts itself down.
+Saves to:
+  ~/Documents/GitHub/swarm_robots/simulation_ws/src/distance_tracker/robot_metrics.csv
+unless you override the output_csv parameter.
 """
 import rclpy
 from rclpy.node import Node
@@ -16,6 +16,8 @@ from std_msgs.msg import Bool
 import math
 import csv
 import os
+import threading
+import time
 from threading import Lock
 from typing import Dict
 
@@ -32,11 +34,11 @@ class RobotTracker:
 
         self.last_pos = None
         self.last_time = None
-        self.cumdist = 0.0
-        self.start_time = None
-        self.end_time = None      # set only when stopped
-        self.moving_time = 0.0
-        self.stopped = False      # <-- explicit stop flag
+        self.cumdist = 0.0        # meters
+        self.start_time = None    # seconds (float)
+        self.end_time = None      # seconds (float) set only on stop
+        self.moving_time = 0.0    # seconds
+        self.stopped = False
         self.lock = Lock()
 
     def handle_odom(self, msg: Odometry):
@@ -51,32 +53,27 @@ class RobotTracker:
         self._update(pos.x, pos.y, t, linear_speed=None)
 
     def _update(self, x, y, t, linear_speed=None):
-        """
-        Update cumulative distance and moving_time.
-        NOTE: Do NOT set end_time here. end_time belongs to STOP events only.
-        """
         with self.lock:
-            # If start_time hasn't been set at all, use this sample to set it (default behavior)
+            # initialize start_time on first sample if not set
             if self.start_time is None:
                 self.start_time = t
                 self.last_time = t
                 self.last_pos = (x, y)
                 return
 
-            # If start_time is set but we haven't recorded a last_pos (e.g. after explicit start reset),
-            # initialize last_pos/last_time from this first incoming sample and do not compute distance yet.
+            # if we have no last position (e.g., after explicit start reset), initialize it
             if self.last_pos is None or self.last_time is None:
                 self.last_pos = (x, y)
                 self.last_time = t
                 return
 
-            # ignore out-of-order
+            # ignore out-of-order messages
             if t < self.last_time:
                 return
 
             dx = x - self.last_pos[0]
             dy = y - self.last_pos[1]
-            dist = math.hypot(dx, dy)
+            dist = math.hypot(dx, dy)   # meters
             dt = (t - self.last_time) if (self.last_time is not None) else 0.0
 
             self.cumdist += dist
@@ -87,7 +84,7 @@ class RobotTracker:
 
             self.last_pos = (x, y)
             self.last_time = t
-            # DO NOT set self.end_time here
+            # do NOT set end_time here (end_time only on explicit STOP)
 
     def get_summary(self):
         with self.lock:
@@ -101,9 +98,9 @@ class RobotTracker:
                 total_time = self.end_time - self.start_time
             return {
                 'name': self.name,
-                'cumdist': float(self.cumdist),
-                'total_time': float(total_time),
-                'moving_time': float(self.moving_time),
+                'cumdist_m': float(self.cumdist),
+                'total_time_s': float(total_time),
+                'moving_time_s': float(self.moving_time),
                 'start_time': self.start_time,
                 'end_time': self.end_time,
                 'stopped': self.stopped
@@ -112,35 +109,35 @@ class RobotTracker:
 class TeamDistanceTrackerNode(Node):
     def __init__(self):
         super().__init__('team_distance_tracker')
-        # params
+
+        # Default output path: project src/distance_tracker folder
+        default_dir = os.path.expanduser('~/Documents/GitHub/swarm_robots/simulation_ws/src/distance_tracker')
+        default_csv = os.path.join(default_dir, 'robot_metrics.csv')
+
+        # parameters
         self.declare_parameter('robot_list', ['tb1','tb2','tb3'])
         self.declare_parameter('topic_prefix', '')
         self.declare_parameter('pose_topic_suffix', '/odom')
-        self.declare_parameter('msg_type', 'odom')  # 'odom' or 'pose'
+        self.declare_parameter('msg_type', 'odom')
         self.declare_parameter('velocity_threshold', 0.05)
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        default_csv = os.path.join(script_dir, "robot_metrics.csv")
         self.declare_parameter('output_csv', default_csv)
         self.declare_parameter('start_on_topic', False)
         self.declare_parameter('start_topic_name', '/mission_start')
         self.declare_parameter('stop_on_topic', False)
         self.declare_parameter('stop_topic_name', '/mission_stop')
         self.declare_parameter('write_interval', 2.0)
-
-        # per-robot start/stop support
+        # per-robot topic config
         self.declare_parameter('use_per_robot_start_topic', True)
         self.declare_parameter('per_robot_start_topic_prefix', '/')
         self.declare_parameter('per_robot_start_topic_suffix', 'mission_start')
         self.declare_parameter('use_per_robot_stop_topic', True)
         self.declare_parameter('per_robot_stop_topic_suffix', 'mission_stop')
-
-        # auto-exit when all robots have stopped
+        # auto-exit behavior
         self.declare_parameter('auto_exit_when_all_stopped', True)
 
-        # shutdown guard
         self._shutdown_called = False
 
-        # read params (defensive)
+        # read params defensively
         pl_param = self.get_parameter('robot_list').get_parameter_value()
         if pl_param.type == 17:
             robot_list = pl_param.string_array_value
@@ -299,53 +296,83 @@ class TeamDistanceTrackerNode(Node):
         if self._shutdown_called:
             return
         self._shutdown_called = True
-        # final write
+        # final write before shutdown
         self._write_csv(final=True)
+
         try:
-            self.get_logger().info("Tracker initiating rclpy.shutdown()")
+            self.get_logger().info("Tracker initiating rclpy.shutdown() (scheduled)...")
         except Exception:
             pass
-        try:
-            rclpy.shutdown()
-        except Exception:
-            pass
+
+        def do_shutdown():
+            # small pause so log messages flush
+            time.sleep(0.12)
+            try:
+                rclpy.shutdown()
+            except Exception:
+                pass
+            # final fallback
+            time.sleep(0.2)
+            try:
+                os._exit(0)
+            except Exception:
+                pass
+
+        t = threading.Thread(target=do_shutdown, daemon=True)
+        t.start()
 
     def _periodic_write(self):
         self._write_csv(final=False)
 
     def _write_csv(self, final=False):
-        header = ['robot','timestamp','cumdist_m','total_time_s','moving_time_s','start_time','end_time','stopped']
-        # ensure directory exists
+        # new CSV format matching your screenshot:
+        # header: robot, total distance (km), total time (s)
         outpath = os.path.abspath(self.output_csv)
         outdir = os.path.dirname(outpath)
         try:
-            if not os.path.isdir(outdir):
-                os.makedirs(outdir, exist_ok=True)
+            os.makedirs(outdir, exist_ok=True)
         except Exception as e:
             self.get_logger().error(f"Could not create output directory '{outdir}': {e}")
             return
 
-        write_header = not os.path.exists(outpath)
+        # prepare rows
+        rows = []
+        total_dist_km = 0.0
+        total_time_s = 0.0
+        for name, tr in self.trackers.items():
+            s = tr.get_summary()
+            dist_km = s['cumdist_m'] / 1000.0
+            t_s = s['total_time_s']
+            rows.append((name, dist_km, t_s))
+            total_dist_km += dist_km
+            total_time_s += t_s
+
+        # write CSV
         try:
-            with open(outpath, 'a', newline='') as f:
+            write_header = not os.path.exists(outpath)
+            with open(outpath, 'w', newline='') as f:
                 writer = csv.writer(f)
-                if write_header:
-                    writer.writerow(header)
-                now_msg = self.get_clock().now().to_msg()
-                ts = float(now_msg.sec) + float(now_msg.nanosec) * 1e-9
-                for name, t in self.trackers.items():
-                    s = t.get_summary()
-                    writer.writerow([name, ts, s['cumdist'], s['total_time'], s['moving_time'], s['start_time'], s['end_time'], s.get('stopped', False)])
-                # ensure it's flushed to disk
+                # header
+                writer.writerow(['robot', 'total distance (km)', 'total time (s)'])
+                # robot rows
+                for rname, dk, ts in rows:
+                    writer.writerow([rname, f"{dk:.6f}", f"{ts:.2f}"])
+                # blank row then Total row (matches image style)
+                writer.writerow([])
+                writer.writerow(['Total', f"{total_dist_km:.6f}", f"{total_time_s:.2f}"])
                 try:
                     f.flush()
                     os.fsync(f.fileno())
                 except Exception:
                     pass
-            if final:
-                self.get_logger().info(f"Final metrics written to {outpath}")
-            else:
-                self.get_logger().debug(f"Periodic metrics written to {outpath}")
+            # log and print file location so user notices before program exits
+            msg = f"Final metrics written to {outpath}"
+            try:
+                self.get_logger().info(msg)
+            except Exception:
+                pass
+            # also print to stdout in case ros logging is shutting down
+            print(msg)
         except Exception as e:
             self.get_logger().error(f"Failed to write CSV '{outpath}': {e}")
 
@@ -361,12 +388,12 @@ class TeamDistanceTrackerNode(Node):
         for name, t in self.trackers.items():
             s = t.get_summary()
             try:
-                self.get_logger().info(f"{name} | dist={s['cumdist']:.3f} m | total_time={s['total_time']:.2f} s | moving={s['moving_time']:.2f} s | stopped={s.get('stopped', False)}")
+                self.get_logger().info(f"{name} | dist={s['cumdist_m'] / 1000.0:.3f} km | total_time={s['total_time_s']:.2f} s | stopped={s.get('stopped', False)}")
             except Exception:
                 pass
-            total_team_dist += s['cumdist']
+            total_team_dist += s['cumdist_m'] / 1000.0
         try:
-            self.get_logger().info(f"Team total distance: {total_team_dist:.3f} m")
+            self.get_logger().info(f"Team total distance: {total_team_dist:.6f} km")
         except Exception:
             pass
 
