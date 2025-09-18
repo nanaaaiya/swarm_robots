@@ -325,8 +325,7 @@ class TeamDistanceTrackerNode(Node):
         self._write_csv(final=False)
 
     def _write_csv(self, final=False):
-        # new CSV format matching your screenshot:
-        # header: robot, total distance (km), total time (s)
+        # CSV columns: robot, total distance (m), total time (s)
         outpath = os.path.abspath(self.output_csv)
         outdir = os.path.dirname(outpath)
         try:
@@ -337,29 +336,28 @@ class TeamDistanceTrackerNode(Node):
 
         # prepare rows
         rows = []
-        total_dist_km = 0.0
+        total_dist_m = 0.0
         total_time_s = 0.0
         for name, tr in self.trackers.items():
             s = tr.get_summary()
-            dist_km = s['cumdist_m'] / 1000.0
+            dist_m = s['cumdist_m']      # already in meters
             t_s = s['total_time_s']
-            rows.append((name, dist_km, t_s))
-            total_dist_km += dist_km
+            rows.append((name, dist_m, t_s))
+            total_dist_m += dist_m
             total_time_s += t_s
 
-        # write CSV
+        # write CSV (overwrite each run to keep only final table)
         try:
-            write_header = not os.path.exists(outpath)
             with open(outpath, 'w', newline='') as f:
                 writer = csv.writer(f)
                 # header
-                writer.writerow(['robot', 'total distance (km)', 'total time (s)'])
+                writer.writerow(['robot', 'total distance (m)', 'total time (s)'])
                 # robot rows
-                for rname, dk, ts in rows:
-                    writer.writerow([rname, f"{dk:.6f}", f"{ts:.2f}"])
-                # blank row then Total row (matches image style)
+                for rname, dm, ts in rows:
+                    writer.writerow([rname, f"{dm:.3f}", f"{ts:.2f}"])
+                # blank row then Total row
                 writer.writerow([])
-                writer.writerow(['Total', f"{total_dist_km:.6f}", f"{total_time_s:.2f}"])
+                writer.writerow(['Total', f"{total_dist_m:.3f}", f"{total_time_s:.2f}"])
                 try:
                     f.flush()
                     os.fsync(f.fileno())
@@ -371,7 +369,6 @@ class TeamDistanceTrackerNode(Node):
                 self.get_logger().info(msg)
             except Exception:
                 pass
-            # also print to stdout in case ros logging is shutting down
             print(msg)
         except Exception as e:
             self.get_logger().error(f"Failed to write CSV '{outpath}': {e}")
@@ -384,18 +381,21 @@ class TeamDistanceTrackerNode(Node):
                 pass
             self._write_csv(final=True)
 
-        total_team_dist = 0.0
+        total_team_dist_m = 0.0
         for name, t in self.trackers.items():
             s = t.get_summary()
             try:
-                self.get_logger().info(f"{name} | dist={s['cumdist_m'] / 1000.0:.3f} km | total_time={s['total_time_s']:.2f} s | stopped={s.get('stopped', False)}")
+                self.get_logger().info(
+                    f"{name} | dist={s['cumdist_m']:.3f} m | total_time={s['total_time_s']:.2f} s | stopped={s.get('stopped', False)}"
+                )
             except Exception:
                 pass
-            total_team_dist += s['cumdist_m'] / 1000.0
+            total_team_dist_m += s['cumdist_m']
         try:
-            self.get_logger().info(f"Team total distance: {total_team_dist:.6f} km")
+            self.get_logger().info(f"Team total distance: {total_team_dist_m:.3f} m")
         except Exception:
             pass
+
 
 def main(args=None):
     rclpy.init(args=args)
