@@ -112,7 +112,7 @@ class TeamDistanceTrackerNode(Node):
 
         # Default output path: project src/distance_tracker folder
         default_dir = os.path.expanduser('~/Documents/GitHub/swarm_robots/simulation_ws/src/distance_tracker')
-        default_csv = os.path.join(default_dir, 'robot_metrics.csv')
+        default_csv = os.path.join(default_dir, 'robot_metrics1.csv')
 
         # parameters
         self.declare_parameter('robot_list', ['tb1','tb2','tb3'])

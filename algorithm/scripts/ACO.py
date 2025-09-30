@@ -9,16 +9,16 @@ n_robots = 3
 # m_tasks = 5
 m_tasks = 9
 
-np.random.seed(42)
+np.random.seed(1631141730)
 # robot_positions = np.random.rand(n_robots, 2) * 10
-# task_positions = np.random.rand(m_tasks, 2) * 10
-# dropoff_positions = np.random.rand(m_tasks, 2) * 10
-
-task_positions = [
-    (0.5, 0.0), (2.0, 0.0), (2.0, 2.0), (4.5, 0.0), (3.0, -1.0),
-    (3.0, -2.0), (0.0, 1.0), (0.5, 1.0), (0.5, 1.0)  # New tasks
-]
+task_positions = np.random.rand(m_tasks, 2) * 10
 dropoff_positions = np.random.rand(m_tasks, 2) * 10
+
+# task_positions = [
+#     (0.5, 0.0), (2.0, 0.0), (2.0, 2.0), (4.5, 0.0), (3.0, -1.0),
+#     (3.0, -2.0), (0.0, 1.0), (0.5, 1.0), (0.5, 1.0)  # New tasks
+# ]
+# dropoff_positions = np.random.rand(m_tasks, 2) * 10
 
 # Initial robot positions
 robot_positions = np.array([
