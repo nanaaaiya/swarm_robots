@@ -261,6 +261,10 @@ def run_aco(run_seed, num_ants=30, num_iterations=100, alpha=1.0, beta=2.0, rho=
     pher_assign = np.ones((m_tasks, n_robots))
     pher_seq = np.ones((m_tasks, m_tasks))
     heuristic_assign = 1.0 / (dist_robot_to_task + 1e-6)  # (m_tasks x n_robots transposed)
+    
+    # heuristic for task sequencing: inverse of distance between tasks
+    heuristic_seq = 1.0 / (dist_task_to_task + np.eye(m_tasks))  # avoid division by zero
+    
     # run ants
     best_cost = float('inf')
     best_routes = None
@@ -277,9 +281,58 @@ def run_aco(run_seed, num_ants=30, num_iterations=100, alpha=1.0, beta=2.0, rho=
                 # sample using rng choice
                 assignment[t] = rng.choice(n_robots, p=weights)
 
-            # produce an order: random permutation then group by assignment
-            order = rng.permutation(m_tasks)
-            robot_tasks = {i: [t for t in order if assignment[t] == i] for i in range(n_robots)}
+            # build task order using pheromone + heuristic for sequencing
+            robot_tasks = {i: [] for i in range(n_robots)}
+            for t in range(m_tasks):
+                robot_tasks[assignment[t]].append(t)
+            
+            # for each robot, build optimal sequence using pheromone + heuristic
+            for i in range(n_robots):
+                tasks = robot_tasks[i]
+                if len(tasks) <= 1:
+                    continue
+                
+                # construct sequence using ant colony approach
+                sequence = []
+                remaining = set(tasks)
+                current_task = None
+                
+                # start with task closest to robot
+                if remaining:
+                    start_task = min(remaining, key=lambda t: np.linalg.norm(robot_positions[i] - task_positions[t]))
+                    sequence.append(start_task)
+                    remaining.remove(start_task)
+                    current_task = start_task
+                
+                # build rest of sequence using pheromone + heuristic
+                while remaining:
+                    # calculate probabilities for next task
+                    probs = []
+                    candidates = list(remaining)
+                    
+                    for next_task in candidates:
+                        if current_task is not None:
+                            # use pheromone and heuristic for task-to-task transitions
+                            pher_val = pher_seq[current_task, next_task] ** alpha
+                            heur_val = heuristic_seq[current_task, next_task] ** beta
+                            prob = pher_val * heur_val
+                        else:
+                            prob = 1.0
+                        probs.append(prob)
+                    
+                    # normalize probabilities
+                    probs = np.array(probs)
+                    probs = probs / (probs.sum() + 1e-12)
+                    
+                    # select next task probabilistically
+                    next_idx = rng.choice(len(candidates), p=probs)
+                    next_task = candidates[next_idx]
+                    
+                    sequence.append(next_task)
+                    remaining.remove(next_task)
+                    current_task = next_task
+                
+                robot_tasks[i] = sequence
 
             # compute cost and route
             routes = {}
@@ -297,6 +350,11 @@ def run_aco(run_seed, num_ants=30, num_iterations=100, alpha=1.0, beta=2.0, rho=
                     prev = drop
                 routes[i] = rt
                 total_cost += dist_sum
+
+            # create order list for pheromone updates
+            order = []
+            for i in range(n_robots):
+                order.extend(robot_tasks[i])
 
             solutions.append((assignment.copy(), order.copy(), total_cost, routes))
             # update best
