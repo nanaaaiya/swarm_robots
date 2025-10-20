@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "communication_msgs__py",
+		"source" : "/home/hehe/Documents/GitHub/swarm_robots/build/communication_msgs/communication_msgs__py"
+	}
+}

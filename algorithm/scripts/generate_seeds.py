@@ -66,10 +66,9 @@ def main():
         seeds = generate_random_seeds(args.count)
         mode = "true-random (secrets)"
 
-    # print(f"Generated {len(seeds)} seeds ({mode}):")
+    print(f"Generated {len(seeds)} seeds ({mode}):")
     for i, s in enumerate(seeds, start=1):
-        # print(f"{i:2d}: {s}")
-        print(s)
+        print(f"{i:2d}: {s}")
 
     # if not args.no_save:
     #     save_files(seeds, args.master_seed)

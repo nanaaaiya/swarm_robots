@@ -1,0 +1,30 @@
+running develop
+running egg_info
+creating slave.egg-info
+writing slave.egg-info/PKG-INFO
+writing dependency_links to slave.egg-info/dependency_links.txt
+writing entry points to slave.egg-info/entry_points.txt
+writing requirements to slave.egg-info/requires.txt
+writing top-level names to slave.egg-info/top_level.txt
+writing manifest file 'slave.egg-info/SOURCES.txt'
+reading manifest file 'slave.egg-info/SOURCES.txt'
+writing manifest file 'slave.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/hehe/Documents/GitHub/swarm_robots/install/slave/lib/python3.10/site-packages/slave.egg-link (link to .)
+Installing navigation_process script to /home/hehe/Documents/GitHub/swarm_robots/install/slave/lib/slave
+Installing odom script to /home/hehe/Documents/GitHub/swarm_robots/install/slave/lib/slave
+Installing send_vel script to /home/hehe/Documents/GitHub/swarm_robots/install/slave/lib/slave
+Installing waypoint_navigator script to /home/hehe/Documents/GitHub/swarm_robots/install/slave/lib/slave
+
+Installed /home/hehe/Documents/GitHub/swarm_robots/build/slave
+running symlink_data
+creating /home/hehe/Documents/GitHub/swarm_robots/install/slave/share/ament_index
+creating /home/hehe/Documents/GitHub/swarm_robots/install/slave/share/ament_index/resource_index
+creating /home/hehe/Documents/GitHub/swarm_robots/install/slave/share/ament_index/resource_index/packages
+symbolically linking /home/hehe/Documents/GitHub/swarm_robots/build/slave/resource/slave -> /home/hehe/Documents/GitHub/swarm_robots/install/slave/share/ament_index/resource_index/packages
+symbolically linking /home/hehe/Documents/GitHub/swarm_robots/build/slave/package.xml -> /home/hehe/Documents/GitHub/swarm_robots/install/slave/share/slave
+creating /home/hehe/Documents/GitHub/swarm_robots/install/slave/share/slave/config
+symbolically linking /home/hehe/Documents/GitHub/swarm_robots/build/slave/config/ekf_config.yaml -> /home/hehe/Documents/GitHub/swarm_robots/install/slave/share/slave/config
+symbolically linking /home/hehe/Documents/GitHub/swarm_robots/build/slave/config/waypoints.yaml -> /home/hehe/Documents/GitHub/swarm_robots/install/slave/share/slave/config
+creating /home/hehe/Documents/GitHub/swarm_robots/install/slave/share/slave/launch
+symbolically linking /home/hehe/Documents/GitHub/swarm_robots/build/slave/launch/waypoint_navigator_launch.py -> /home/hehe/Documents/GitHub/swarm_robots/install/slave/share/slave/launch

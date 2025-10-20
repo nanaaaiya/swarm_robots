@@ -9,6 +9,9 @@ from launch.substitutions import LaunchConfiguration, TextSubstitution
 from launch_ros.actions import Node
 from launch.conditions import IfCondition
 from ament_index_python.packages import get_package_share_directory
+from launch.actions import GroupAction, TimerAction
+from launch_ros.actions import PushRosNamespace
+
 
 def generate_launch_description():
     # Launch arguments
@@ -28,7 +31,17 @@ def generate_launch_description():
     urdf_file = os.path.join(pkg_rb, 'description', 'swarm_bot.urdf')
     map_yaml = os.path.join(pkg_nav, 'maps', 'map.yaml')
     params_file = os.path.join(pkg_nav, 'params', 'nav2_params.yaml')
-    rviz_config = os.path.join(pkg_nav, 'rviz', 'multi_robot_nav2.rviz')
+    rviz_config = os.path.join(pkg_nav, 'rviz', 'multi_robot_nav2.rviz') 
+
+
+    rviz_config_file = LaunchConfiguration('rviz_config_file')
+    declare_rviz_config_file_cmd = DeclareLaunchArgument(
+        'rviz_config_file',
+        default_value=os.path.join(
+            pkg_nav, 'rviz', 'multi_robot_nav2.rviz'),
+        description='Full path to the RVIZ config file to use')
+
+    ld.add_action(declare_rviz_config_file_cmd)
 
     # Launch Gazebo
     ld.add_action(IncludeLaunchDescription(
@@ -46,21 +59,11 @@ def generate_launch_description():
     # TF remappings
     remappings = [('/tf', 'tf'), ('/tf_static', 'tf_static')]
 
-    # Map server
-    ld.add_action(Node(
-        package='nav2_map_server', executable='map_server', name='map_server',
-        output='screen', parameters=[{'yaml_filename': map_yaml, 'use_sim_time': use_sim_time}],
-        remappings=remappings
-    ))
-    ld.add_action(Node(
-        package='nav2_lifecycle_manager', executable='lifecycle_manager', name='lifecycle_manager_map_server',
-        output='screen',
-        parameters=[{'use_sim_time': use_sim_time}, {'autostart': True}, {'node_names': ['map_server']}]
-    ))
-
+    
     # Robot definitions
     robots = []
-    for i in range(3):
+    number_of_robots = 3
+    for i in range(number_of_robots):
         robots.append({
             'name': f'robot{i}',
             'x': 2.0 * i,
@@ -80,26 +83,78 @@ def generate_launch_description():
             output='screen',
             parameters=[{'use_sim_time': use_sim_time,
                             'publish_frequency': 10.0,
-                            'frame_prefix': f'{ns}/'}],
+                            'frame_prefix': ns + '/'}],
             # remappings=remappings,
             arguments=[urdf_file],
         ))
 
+        ld.add_action(Node(
+        package='tf2_ros',
+        namespace=ns,
+        executable='static_transform_publisher',
+        name=f'static_odom_to_base_link_{ns}',
+        arguments=[
+          '0','0','0','0','0','0',
+          ns + '/odom', ns + '/base_link'
+        ]
+        ))
+
+        ld.add_action(Node(
+            package='tf2_ros',
+            executable='static_transform_publisher',
+            namespace=ns,
+            name='map_to_odom_broadcaster',
+            arguments=[
+                '0', '0', '0',    # x y z
+                '0', '0', '0',    # roll pitch yaw
+                'map', 'odom'     # parent frame, child frame
+            ],
+            # since namespace=ns, this publishes on:
+            #   /robotX/tf_static
+            #   /robotX/tf
+        ))
+
+
+
+            # Map server
+        ld.add_action(Node(
+            package='nav2_map_server', 
+            executable='map_server', 
+            name='map_server',
+            namespace=ns,  
+            output='screen', 
+            parameters=[{'yaml_filename': map_yaml, 'use_sim_time': use_sim_time}],
+            remappings=[('map', '/map')] 
+        ))
+
+        ld.add_action(Node(
+            package='nav2_lifecycle_manager', 
+            executable='lifecycle_manager', 
+            name='lifecycle_manager_map_server',
+            output='screen',
+            namespace=ns,  
+            parameters=[{'use_sim_time': use_sim_time}, 
+                        {'autostart': True}, 
+                        {'node_names': ['map_server']}]
+        ))
+
+
+
         # Spawn robot
-        ld.add_action(IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(
-                os.path.join(pkg_rb, 'launch', 'robot_spawn_tf.py')
-            ),
-            launch_arguments={
-                'robot_urdf': urdf_file,
-                'entity': ns,
-                'robot_name': ns,
-                'robot_namespace': ns,
-                'x': TextSubstitution(text=str(robot['x'])),
-                'y': TextSubstitution(text=str(robot['y'])),
-                'z': TextSubstitution(text=str(robot['z'])),
-                'use_sim_time': use_sim_time
-            }.items()
+        ld.add_action(Node(
+            package='gazebo_ros',
+            executable='spawn_entity.py',
+            namespace=ns,
+            name='spawn_' + ns,
+            arguments=[
+                '-entity', ns,
+                '-file', urdf_file,
+                '-robot_namespace', ns,
+                '-x', str(robot['x']),
+                '-y', str(robot['y']),
+                '-z', str(robot['z'])
+            ],
+            output='screen'
         ))
 
         # Nav2 bringup after 5s
@@ -108,8 +163,8 @@ def generate_launch_description():
                 os.path.join(pkg_nav, 'launch', 'nav2.launch.py')
             ),
             launch_arguments={
-                'namespace': ns,
-                'use_namespace': 'True',
+                # 'namespace': ns,
+                # 'use_namespace': 'True',
                 'map': map_yaml,
                 'params_file': params_file,
                 'use_sim_time': use_sim_time,
@@ -117,23 +172,65 @@ def generate_launch_description():
                 'slam': 'False'
             }.items()
         )
-        ld.add_action(TimerAction(period=5.0, actions=[nav2_launch]))
+        # ld.add_action(TimerAction(period=5.0, actions=[nav2_launch]))
+        ld.add_action(
+            TimerAction(
+            period=5.0,
+            actions=[
+                GroupAction([
+                PushRosNamespace(ns),
+                nav2_launch
+                ])
+            ]
+            )
+        )
+
 
         # Static TF publisher after 6s
-        static_tf = Node(
-            package='tf2_ros', executable='static_transform_publisher', name=f'static_odom_to_base_link_{ns}',
-            namespace=ns,
-            arguments=['0','0','0','0','0','0',  f'{ns}/odom', f'{ns}/base_link'], output='screen'
-        )
-        ld.add_action(TimerAction(period=6.0, actions=[static_tf]))
+        # static_tf = Node(
+        #     package='tf2_ros', executable='static_transform_publisher', name=f'static_odom_to_base_link_{ns}',
+        #     namespace=ns,
+        #     arguments=['0','0','0','0','0','0',  f'{ns}/odom', f'{ns}/base_link'], output='screen'
+        # )
+        # ld.add_action(TimerAction(period=6.0, actions=[static_tf]))
 
         # RViz per robot after 8s
-        # rviz_node = Node(
-        #     package='rviz2', executable='rviz2', name=f'{ns}_rviz', namespace=ns,
-        #     arguments=['-d', rviz_config], output='screen',
-        #     condition=IfCondition(enable_rviz)
-        # )
+        # rviz_node = IncludeLaunchDescription(
+        #     PythonLaunchDescriptionSource(
+        #         os.path.join(pkg_nav, 'launch', 'rviz_launch.py')),
+        #         launch_arguments={'use_sim_time': use_sim_time, 
+        #                           'namespace': ns,
+        #                           'use_namespace': 'True',
+        #                           'rviz_config_file': rviz_config_file, 'log_level': 'warn'}.items(),
+        #                            condition=IfCondition(enable_rviz)
+        #                             )
         # ld.add_action(TimerAction(period=8.0, actions=[rviz_node]))
+
+        # rviz = IncludeLaunchDescription(
+        #     PythonLaunchDescriptionSource(
+        #         os.path.join(pkg_nav, 'launch', 'rviz_launch.py')
+        #     ),
+        #     launch_arguments={
+        #             'namespace':       ns,
+        #             'use_namespace':  'True',
+        #             'rviz_config_file': rviz_config_file,
+        #             'log_level':      'warn'
+        #         }.items()
+        #         )
+
+        # ld.add_action(
+        # TimerAction(
+        #     period=6.0,
+        #     actions=[
+        #     GroupAction([
+        #         PushRosNamespace(ns),
+        #         rviz
+        #     ])
+        #     ]
+        # )
+        # )
+
+        
 
     return ld
 

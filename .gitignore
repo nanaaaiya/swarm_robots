@@ -5,3 +5,5 @@
 /algorithm/build/
 /algorithm/log/
 /algorithm/install/
+
+*.csv

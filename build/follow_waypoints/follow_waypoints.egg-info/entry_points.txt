@@ -1,0 +1,4 @@
+[console_scripts]
+follow_waypoints_exe = follow_waypoints.follow_waypoints:main
+follow_waypoints_multi = follow_waypoints.follow_waypoints_multi:main
+

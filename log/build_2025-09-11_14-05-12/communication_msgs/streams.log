@@ -1,0 +1,359 @@
+[0.024s] Invoking command in '/home/hehe/Documents/GitHub/swarm_robots/build/communication_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hehe/swarm/src/multibot/install/follow_waypoints:/opt/ros/humble /usr/bin/cmake /home/hehe/Documents/GitHub/swarm_robots/algorithm/src/communication_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs
+[0.736s] -- The C compiler identification is GNU 11.4.0
+[0.736s] -- The CXX compiler identification is GNU 11.4.0
+[0.737s] -- Detecting C compiler ABI info
+[0.737s] -- Detecting C compiler ABI info - done
+[0.737s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.737s] -- Detecting C compile features
+[0.737s] -- Detecting C compile features - done
+[0.737s] -- Detecting CXX compiler ABI info
+[0.737s] -- Detecting CXX compiler ABI info - done
+[0.737s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.737s] -- Detecting CXX compile features
+[0.737s] -- Detecting CXX compile features - done
+[0.737s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.737s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.737s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.737s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.738s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.738s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.738s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.738s] -- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.738s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.141s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[1.473s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.062s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.093s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[2.095s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[2.142s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[2.142s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[2.142s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[2.142s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[2.172s] -- Found PythonExtra: .so  
+[2.285s] -- Added test 'copyright' to check source files copyright and LICENSE
+[2.288s] -- Added test 'lint_cmake' to check CMake code style
+[2.290s] -- Added test 'xmllint' to check XML markup files
+[2.314s] -- Configuring done
+[2.390s] -- Generating done
+[2.406s] -- Build files have been written to: /home/hehe/Documents/GitHub/swarm_robots/build/communication_msgs
+[2.425s] Invoked command in '/home/hehe/Documents/GitHub/swarm_robots/build/communication_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hehe/swarm/src/multibot/install/follow_waypoints:/opt/ros/humble /usr/bin/cmake /home/hehe/Documents/GitHub/swarm_robots/algorithm/src/communication_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs
+[2.432s] Invoking command in '/home/hehe/Documents/GitHub/swarm_robots/build/communication_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hehe/swarm/src/multibot/install/follow_waypoints:/opt/ros/humble /usr/bin/cmake --build /home/hehe/Documents/GitHub/swarm_robots/build/communication_msgs -- -j6 -l6
+[2.505s] [  1%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[3.511s] [  1%] Built target communication_msgs__cpp
+[3.548s] [  1%] Built target ament_cmake_python_symlink_communication_msgs
+[3.564s] [  2%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[4.092s] [  3%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/communication_msgs/msg/detail/robot__type_support.cpp.o[0m
+[4.526s] [  5%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/communication_msgs/msg/detail/task__type_support.cpp.o[0m
+[4.858s] [  6%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/communication_msgs/msg/detail/task_allocation__type_support.cpp.o[0m
+[5.215s] [  7%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/communication_msgs/msg/detail/task_allocation_array__type_support.cpp.o[0m
+[5.564s] [  8%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/communication_msgs/msg/detail/robot_status__type_support.cpp.o[0m
+[5.850s] [ 10%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/communication_msgs/msg/detail/robot_odom__type_support.cpp.o[0m
+[6.126s] [ 11%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/communication_msgs/msg/detail/robots__type_support.cpp.o[0m
+[6.426s] [ 12%] [32m[1mLinking CXX shared library libcommunication_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[6.519s] [ 12%] Built target communication_msgs__rosidl_typesupport_introspection_cpp
+[6.529s] [ 13%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[6.712s] running egg_info
+[6.713s] creating communication_msgs.egg-info
+[6.713s] writing communication_msgs.egg-info/PKG-INFO
+[6.713s] writing dependency_links to communication_msgs.egg-info/dependency_links.txt
+[6.713s] writing top-level names to communication_msgs.egg-info/top_level.txt
+[6.713s] writing manifest file 'communication_msgs.egg-info/SOURCES.txt'
+[6.715s] reading manifest file 'communication_msgs.egg-info/SOURCES.txt'
+[6.716s] writing manifest file 'communication_msgs.egg-info/SOURCES.txt'
+[6.742s] [ 13%] Built target ament_cmake_python_build_communication_msgs_egg
+[6.753s] [ 15%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[6.989s] [ 17%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/communication_msgs/msg/detail/dds_fastrtps/robot__type_support.cpp.o[0m
+[6.989s] [ 17%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/communication_msgs/msg/detail/dds_fastrtps/task__type_support.cpp.o[0m
+[7.090s] [ 18%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/communication_msgs/msg/robot__type_support.cpp.o[0m
+[7.315s] [ 20%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/communication_msgs/msg/task__type_support.cpp.o[0m
+[7.332s] [ 21%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/communication_msgs/msg/task_allocation__type_support.cpp.o[0m
+[7.333s] [ 22%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/communication_msgs/msg/detail/dds_fastrtps/task_allocation_array__type_support.cpp.o[0m
+[7.339s] [ 24%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/communication_msgs/msg/detail/dds_fastrtps/task_allocation__type_support.cpp.o[0m
+[7.573s] [ 25%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/communication_msgs/msg/task_allocation_array__type_support.cpp.o[0m
+[7.573s] [ 26%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/communication_msgs/msg/robot_status__type_support.cpp.o[0m
+[7.752s] [ 27%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/communication_msgs/msg/robot_odom__type_support.cpp.o[0m
+[7.755s] [ 29%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/communication_msgs/msg/detail/dds_fastrtps/robot_status__type_support.cpp.o[0m
+[7.768s] [ 30%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/communication_msgs/msg/detail/dds_fastrtps/robot_odom__type_support.cpp.o[0m
+[7.826s] [ 31%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/communication_msgs/msg/robots__type_support.cpp.o[0m
+[8.075s] [ 32%] [32m[1mLinking CXX shared library libcommunication_msgs__rosidl_typesupport_cpp.so[0m
+[8.112s] [ 34%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/communication_msgs/msg/detail/dds_fastrtps/robots__type_support.cpp.o[0m
+[8.122s] [ 34%] Built target communication_msgs__rosidl_typesupport_cpp
+[8.137s] [ 35%] [34m[1mGenerating C code for ROS interfaces[0m
+[8.450s] [ 36%] [32m[1mLinking CXX shared library libcommunication_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[8.546s] [ 36%] Built target communication_msgs__rosidl_typesupport_fastrtps_cpp
+[8.756s] [ 39%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_generator_c.dir/rosidl_generator_c/communication_msgs/msg/detail/robot__functions.c.o[0m
+[8.757s] [ 39%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_generator_c.dir/rosidl_generator_c/communication_msgs/msg/detail/task__functions.c.o[0m
+[8.811s] [ 40%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_generator_c.dir/rosidl_generator_c/communication_msgs/msg/detail/robot_odom__functions.c.o[0m
+[8.815s] [ 41%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_generator_c.dir/rosidl_generator_c/communication_msgs/msg/detail/robots__functions.c.o[0m
+[8.847s] [ 43%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_generator_c.dir/rosidl_generator_c/communication_msgs/msg/detail/robot_status__functions.c.o[0m
+[8.852s] [ 44%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_generator_c.dir/rosidl_generator_c/communication_msgs/msg/detail/task_allocation_array__functions.c.o[0m
+[8.886s] [ 45%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_generator_c.dir/rosidl_generator_c/communication_msgs/msg/detail/task_allocation__functions.c.o[0m
+[8.935s] [ 46%] [32m[1mLinking C shared library libcommunication_msgs__rosidl_generator_c.so[0m
+[8.976s] [ 46%] Built target communication_msgs__rosidl_generator_c
+[8.986s] [ 48%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[8.988s] [ 49%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[9.399s] [ 50%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/communication_msgs/msg/detail/robot__type_support.c.o[0m
+[9.401s] [ 51%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/communication_msgs/msg/detail/task__type_support.c.o[0m
+[9.432s] [ 53%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/communication_msgs/msg/detail/robot__type_support_c.cpp.o[0m
+[9.437s] [ 54%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/communication_msgs/msg/detail/task__type_support_c.cpp.o[0m
+[9.438s] [ 55%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/communication_msgs/msg/detail/task_allocation_array__type_support.c.o[0m
+[9.439s] [ 56%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/communication_msgs/msg/detail/task_allocation__type_support.c.o[0m
+[9.472s] [ 59%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/communication_msgs/msg/detail/robot_status__type_support.c.o[0m
+[9.472s] [ 59%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/communication_msgs/msg/detail/robot_odom__type_support.c.o[0m
+[9.502s] [ 60%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/communication_msgs/msg/detail/robots__type_support.c.o[0m
+[9.536s] [ 62%] [32m[1mLinking C shared library libcommunication_msgs__rosidl_typesupport_introspection_c.so[0m
+[9.573s] [ 62%] Built target communication_msgs__rosidl_typesupport_introspection_c
+[9.586s] [ 63%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[9.728s] [ 64%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/communication_msgs/msg/detail/robot_status__type_support_c.cpp.o[0m
+[9.733s] [ 65%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/communication_msgs/msg/detail/robot_odom__type_support_c.cpp.o[0m
+[9.945s] [ 67%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/communication_msgs/msg/robot__type_support.cpp.o[0m
+[9.982s] [ 68%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/communication_msgs/msg/task__type_support.cpp.o[0m
+[10.011s] [ 69%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/communication_msgs/msg/task_allocation__type_support.cpp.o[0m
+[10.013s] [ 70%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/communication_msgs/msg/task_allocation_array__type_support.cpp.o[0m
+[10.017s] [ 72%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/communication_msgs/msg/detail/robots__type_support_c.cpp.o[0m
+[10.024s] [ 73%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/communication_msgs/msg/detail/task_allocation_array__type_support_c.cpp.o[0m
+[10.041s] [ 74%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/communication_msgs/msg/robot_odom__type_support.cpp.o[0m
+[10.041s] [ 75%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/communication_msgs/msg/robot_status__type_support.cpp.o[0m
+[10.069s] [ 77%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/communication_msgs/msg/robots__type_support.cpp.o[0m
+[10.097s] [ 78%] [32m[1mLinking CXX shared library libcommunication_msgs__rosidl_typesupport_c.so[0m
+[10.138s] [ 78%] Built target communication_msgs__rosidl_typesupport_c
+[10.291s] [ 79%] [32mBuilding CXX object CMakeFiles/communication_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/communication_msgs/msg/detail/task_allocation__type_support_c.cpp.o[0m
+[10.554s] [ 81%] [32m[1mLinking CXX shared library libcommunication_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[10.655s] [ 81%] Built target communication_msgs__rosidl_typesupport_fastrtps_c
+[10.674s] [ 81%] Built target communication_msgs
+[10.694s] [ 82%] [34m[1mGenerating Python code for ROS interfaces[0m
+[11.383s] [ 82%] Built target communication_msgs__py
+[11.401s] [ 83%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_generator_py.dir/rosidl_generator_py/communication_msgs/msg/_task_allocation_s.c.o[0m
+[11.401s] [ 84%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_generator_py.dir/rosidl_generator_py/communication_msgs/msg/_task_s.c.o[0m
+[11.404s] [ 86%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_generator_py.dir/rosidl_generator_py/communication_msgs/msg/_robot_s.c.o[0m
+[11.509s] [ 87%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_generator_py.dir/rosidl_generator_py/communication_msgs/msg/_robot_odom_s.c.o[0m
+[11.509s] [ 88%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_generator_py.dir/rosidl_generator_py/communication_msgs/msg/_robot_status_s.c.o[0m
+[11.521s] [ 89%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_generator_py.dir/rosidl_generator_py/communication_msgs/msg/_robots_s.c.o[0m
+[11.599s] [ 91%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_generator_py.dir/rosidl_generator_py/communication_msgs/msg/_task_allocation_array_s.c.o[0m
+[11.691s] [ 92%] [32m[1mLinking C shared library rosidl_generator_py/communication_msgs/libcommunication_msgs__rosidl_generator_py.so[0m
+[11.739s] [ 92%] Built target communication_msgs__rosidl_generator_py
+[11.759s] [ 94%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/communication_msgs/_communication_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[11.759s] [ 94%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/communication_msgs/_communication_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[11.762s] [ 96%] [32mBuilding C object CMakeFiles/communication_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/communication_msgs/_communication_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[11.862s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/communication_msgs/communication_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[11.864s] [ 98%] [32m[1mLinking C shared library rosidl_generator_py/communication_msgs/communication_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[11.866s] [100%] [32m[1mLinking C shared library rosidl_generator_py/communication_msgs/communication_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[11.901s] [100%] Built target communication_msgs__rosidl_typesupport_c__pyext
+[11.904s] [100%] Built target communication_msgs__rosidl_typesupport_fastrtps_c__pyext
+[11.905s] [100%] Built target communication_msgs__rosidl_typesupport_introspection_c__pyext
+[11.916s] Invoked command in '/home/hehe/Documents/GitHub/swarm_robots/build/communication_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hehe/swarm/src/multibot/install/follow_waypoints:/opt/ros/humble /usr/bin/cmake --build /home/hehe/Documents/GitHub/swarm_robots/build/communication_msgs -- -j6 -l6
+[11.919s] Invoking command in '/home/hehe/Documents/GitHub/swarm_robots/build/communication_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hehe/swarm/src/multibot/install/follow_waypoints:/opt/ros/humble /usr/bin/cmake --install /home/hehe/Documents/GitHub/swarm_robots/build/communication_msgs
+[11.924s] -- Install configuration: ""
+[11.925s] -- Execute custom install script
+[11.925s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/ament_index/resource_index/rosidl_interfaces/communication_msgs
+[11.934s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot__functions.h
+[11.948s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot__struct.h
+[11.957s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot__type_support.h
+[11.965s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_odom__functions.h
+[11.972s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_odom__struct.h
+[11.979s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_odom__type_support.h
+[11.987s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_status__functions.h
+[12.001s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_status__struct.h
+[12.009s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_status__type_support.h
+[12.016s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robots__functions.h
+[12.025s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robots__struct.h
+[12.032s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robots__type_support.h
+[12.046s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task__functions.h
+[12.053s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task__struct.h
+[12.060s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task__type_support.h
+[12.068s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation__functions.h
+[12.075s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation__struct.h
+[12.084s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation__type_support.h
+[12.100s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation_array__functions.h
+[12.116s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation_array__struct.h
+[12.124s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation_array__type_support.h
+[12.131s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/robot.h
+[12.139s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/robot_odom.h
+[12.147s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/robot_status.h
+[12.155s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/robots.h
+[12.167s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/rosidl_generator_c__visibility_control.h
+[12.177s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/task.h
+[12.184s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/task_allocation.h
+[12.191s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/task_allocation_array.h
+[12.199s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/environment/library_path.sh
+[12.207s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/environment/library_path.dsv
+[12.219s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot__rosidl_typesupport_fastrtps_c.h
+[12.227s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_odom__rosidl_typesupport_fastrtps_c.h
+[12.239s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_status__rosidl_typesupport_fastrtps_c.h
+[12.247s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robots__rosidl_typesupport_fastrtps_c.h
+[12.254s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task__rosidl_typesupport_fastrtps_c.h
+[12.262s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation__rosidl_typesupport_fastrtps_c.h
+[12.270s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation_array__rosidl_typesupport_fastrtps_c.h
+[12.278s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[12.286s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot__rosidl_typesupport_introspection_c.h
+[12.293s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_odom__rosidl_typesupport_introspection_c.h
+[12.301s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_status__rosidl_typesupport_introspection_c.h
+[12.308s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robots__rosidl_typesupport_introspection_c.h
+[12.315s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task__rosidl_typesupport_introspection_c.h
+[12.323s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation__rosidl_typesupport_introspection_c.h
+[12.331s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation_array__rosidl_typesupport_introspection_c.h
+[12.341s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[12.350s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot__builder.hpp
+[12.358s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot__struct.hpp
+[12.366s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot__traits.hpp
+[12.374s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot__type_support.hpp
+[12.381s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_odom__builder.hpp
+[12.389s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_odom__struct.hpp
+[12.396s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_odom__traits.hpp
+[12.405s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_odom__type_support.hpp
+[12.415s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_status__builder.hpp
+[12.423s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_status__struct.hpp
+[12.431s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_status__traits.hpp
+[12.440s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_status__type_support.hpp
+[12.449s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robots__builder.hpp
+[12.457s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robots__struct.hpp
+[12.466s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robots__traits.hpp
+[12.475s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robots__type_support.hpp
+[12.484s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task__builder.hpp
+[12.492s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task__struct.hpp
+[12.502s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task__traits.hpp
+[12.512s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task__type_support.hpp
+[12.520s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation__builder.hpp
+[12.528s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation__struct.hpp
+[12.535s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation__traits.hpp
+[12.543s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation__type_support.hpp
+[12.550s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation_array__builder.hpp
+[12.558s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation_array__struct.hpp
+[12.566s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation_array__traits.hpp
+[12.574s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation_array__type_support.hpp
+[12.581s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/robot.hpp
+[12.588s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/robot_odom.hpp
+[12.596s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/robot_status.hpp
+[12.603s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/robots.hpp
+[12.611s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[12.618s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/task.hpp
+[12.625s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/task_allocation.hpp
+[12.634s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/task_allocation_array.hpp
+[12.643s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot__rosidl_typesupport_fastrtps_cpp.hpp
+[12.654s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_odom__rosidl_typesupport_fastrtps_cpp.hpp
+[12.666s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_status__rosidl_typesupport_fastrtps_cpp.hpp
+[12.674s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robots__rosidl_typesupport_fastrtps_cpp.hpp
+[12.681s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task__rosidl_typesupport_fastrtps_cpp.hpp
+[12.689s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation__rosidl_typesupport_fastrtps_cpp.hpp
+[12.696s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation_array__rosidl_typesupport_fastrtps_cpp.hpp
+[12.704s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[12.712s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot__rosidl_typesupport_introspection_cpp.hpp
+[12.719s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_odom__rosidl_typesupport_introspection_cpp.hpp
+[12.728s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robot_status__rosidl_typesupport_introspection_cpp.hpp
+[12.743s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/robots__rosidl_typesupport_introspection_cpp.hpp
+[12.758s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task__rosidl_typesupport_introspection_cpp.hpp
+[12.765s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation__rosidl_typesupport_introspection_cpp.hpp
+[12.774s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/include/communication_msgs/communication_msgs/msg/detail/task_allocation_array__rosidl_typesupport_introspection_cpp.hpp
+[12.782s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/environment/pythonpath.sh
+[12.790s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/environment/pythonpath.dsv
+[12.798s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs-0.0.0-py3.10.egg-info/PKG-INFO
+[12.805s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs-0.0.0-py3.10.egg-info/SOURCES.txt
+[12.813s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs-0.0.0-py3.10.egg-info/dependency_links.txt
+[12.820s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs-0.0.0-py3.10.egg-info/top_level.txt
+[12.829s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/__init__.py
+[12.843s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/_communication_msgs_s.ep.rosidl_typesupport_c.c
+[12.851s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/_communication_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[12.860s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/_communication_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[12.874s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/communication_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[12.882s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/communication_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[12.896s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/communication_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[12.905s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/libcommunication_msgs__rosidl_generator_py.so
+[12.916s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/__init__.py
+[12.927s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_robot.py
+[12.935s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_robot_odom.py
+[12.943s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_robot_odom_s.c
+[12.951s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_robot_s.c
+[12.959s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_robot_status.py
+[12.972s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_robot_status_s.c
+[12.979s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_robots.py
+[12.989s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_robots_s.c
+[12.997s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_task.py
+[13.005s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_task_allocation.py
+[13.014s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_task_allocation_array.py
+[13.022s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_task_allocation_array_s.c
+[13.031s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_task_allocation_s.c
+[13.039s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_task_s.c
+[13.047s] -- Up-to-date symlink: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/communication_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[13.047s] -- Up-to-date symlink: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/communication_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[13.048s] -- Up-to-date symlink: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/communication_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[13.048s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/msg/Robot.idl
+[13.056s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/msg/Task.idl
+[13.067s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/msg/TaskAllocation.idl
+[13.081s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/msg/TaskAllocationArray.idl
+[13.089s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/msg/RobotStatus.idl
+[13.105s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/msg/RobotOdom.idl
+[13.114s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/msg/Robots.idl
+[13.123s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/msg/Robot.msg
+[13.131s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/msg/Task.msg
+[13.139s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/msg/TaskAllocation.msg
+[13.146s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/msg/TaskAllocationArray.msg
+[13.155s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/msg/RobotStatus.msg
+[13.162s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/msg/RobotOdom.msg
+[13.170s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/msg/Robots.msg
+[13.178s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/ament_index/resource_index/package_run_dependencies/communication_msgs
+[13.188s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/ament_index/resource_index/parent_prefix_path/communication_msgs
+[13.196s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/environment/ament_prefix_path.sh
+[13.203s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/environment/ament_prefix_path.dsv
+[13.211s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/environment/path.sh
+[13.226s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/environment/path.dsv
+[13.234s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/local_setup.bash
+[13.242s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/local_setup.sh
+[13.254s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/local_setup.zsh
+[13.262s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/local_setup.dsv
+[13.277s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/package.dsv
+[13.285s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/ament_index/resource_index/packages/communication_msgs
+[13.293s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/rosidl_cmake-extras.cmake
+[13.301s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[13.316s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[13.325s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[13.332s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[13.340s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[13.348s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[13.363s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/communication_msgsConfig.cmake
+[13.372s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/communication_msgsConfig-version.cmake
+[13.380s] -- Symlinking: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/package.xml
+[13.388s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/lib/libcommunication_msgs__rosidl_generator_c.so
+[13.388s] -- Set runtime path of "/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/lib/libcommunication_msgs__rosidl_generator_c.so" to ""
+[13.388s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/lib/libcommunication_msgs__rosidl_typesupport_fastrtps_c.so
+[13.389s] -- Set runtime path of "/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/lib/libcommunication_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[13.389s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/lib/libcommunication_msgs__rosidl_typesupport_introspection_c.so
+[13.390s] -- Set runtime path of "/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/lib/libcommunication_msgs__rosidl_typesupport_introspection_c.so" to ""
+[13.390s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/lib/libcommunication_msgs__rosidl_typesupport_c.so
+[13.391s] -- Set runtime path of "/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/lib/libcommunication_msgs__rosidl_typesupport_c.so" to ""
+[13.391s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/lib/libcommunication_msgs__rosidl_typesupport_fastrtps_cpp.so
+[13.392s] -- Set runtime path of "/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/lib/libcommunication_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[13.392s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/lib/libcommunication_msgs__rosidl_typesupport_introspection_cpp.so
+[13.393s] -- Set runtime path of "/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/lib/libcommunication_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[13.393s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/lib/libcommunication_msgs__rosidl_typesupport_cpp.so
+[13.393s] -- Set runtime path of "/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/lib/libcommunication_msgs__rosidl_typesupport_cpp.so" to ""
+[13.424s] Listing '/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs'...
+[13.424s] Compiling '/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/__init__.py'...
+[13.424s] Listing '/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg'...
+[13.424s] Compiling '/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/__init__.py'...
+[13.424s] Compiling '/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_robot.py'...
+[13.424s] Compiling '/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_robot_odom.py'...
+[13.424s] Compiling '/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_robot_status.py'...
+[13.424s] Compiling '/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_robots.py'...
+[13.424s] Compiling '/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_task.py'...
+[13.424s] Compiling '/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_task_allocation.py'...
+[13.425s] Compiling '/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/local/lib/python3.10/dist-packages/communication_msgs/msg/_task_allocation_array.py'...
+[13.428s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/lib/libcommunication_msgs__rosidl_generator_py.so
+[13.429s] -- Set runtime path of "/home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/lib/libcommunication_msgs__rosidl_generator_py.so" to ""
+[13.429s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/export_communication_msgs__rosidl_generator_cExport.cmake
+[13.429s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/export_communication_msgs__rosidl_generator_cExport-noconfig.cmake
+[13.429s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/export_communication_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[13.429s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/export_communication_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[13.430s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/communication_msgs__rosidl_typesupport_introspection_cExport.cmake
+[13.430s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/communication_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[13.430s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/communication_msgs__rosidl_typesupport_cExport.cmake
+[13.430s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/communication_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[13.430s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/export_communication_msgs__rosidl_generator_cppExport.cmake
+[13.431s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/export_communication_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[13.431s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/export_communication_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[13.431s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/communication_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[13.431s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/communication_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[13.432s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/communication_msgs__rosidl_typesupport_cppExport.cmake
+[13.432s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/communication_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[13.432s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/export_communication_msgs__rosidl_generator_pyExport.cmake
+[13.432s] -- Installing: /home/hehe/Documents/GitHub/swarm_robots/install/communication_msgs/share/communication_msgs/cmake/export_communication_msgs__rosidl_generator_pyExport-noconfig.cmake
+[13.437s] Invoked command in '/home/hehe/Documents/GitHub/swarm_robots/build/communication_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hehe/swarm/src/multibot/install/follow_waypoints:/opt/ros/humble /usr/bin/cmake --install /home/hehe/Documents/GitHub/swarm_robots/build/communication_msgs

@@ -1,0 +1,7 @@
+/home/hehe/Documents/GitHub/swarm_robots/build/communication_msgs/rosidl_adapter/communication_msgs:msg/Robot.idl
+/home/hehe/Documents/GitHub/swarm_robots/build/communication_msgs/rosidl_adapter/communication_msgs:msg/Task.idl
+/home/hehe/Documents/GitHub/swarm_robots/build/communication_msgs/rosidl_adapter/communication_msgs:msg/TaskAllocation.idl
+/home/hehe/Documents/GitHub/swarm_robots/build/communication_msgs/rosidl_adapter/communication_msgs:msg/TaskAllocationArray.idl
+/home/hehe/Documents/GitHub/swarm_robots/build/communication_msgs/rosidl_adapter/communication_msgs:msg/RobotStatus.idl
+/home/hehe/Documents/GitHub/swarm_robots/build/communication_msgs/rosidl_adapter/communication_msgs:msg/RobotOdom.idl
+/home/hehe/Documents/GitHub/swarm_robots/build/communication_msgs/rosidl_adapter/communication_msgs:msg/Robots.idl

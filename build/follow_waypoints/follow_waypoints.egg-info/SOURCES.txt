@@ -1,0 +1,17 @@
+package.xml
+setup.cfg
+setup.py
+config/follow_waypoints.yaml
+follow_waypoints/__init__.py
+follow_waypoints/follow_waypoints.py
+follow_waypoints/follow_waypoints_multi.py
+follow_waypoints/follow_waypoints_multi_bk_myversion.py
+follow_waypoints/follow_waypoints_multi_chatgpt.py
+follow_waypoints.egg-info/PKG-INFO
+follow_waypoints.egg-info/SOURCES.txt
+follow_waypoints.egg-info/dependency_links.txt
+follow_waypoints.egg-info/entry_points.txt
+follow_waypoints.egg-info/requires.txt
+follow_waypoints.egg-info/top_level.txt
+follow_waypoints.egg-info/zip-safe
+resource/follow_waypoints

@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+master/ACO.py
+master/PSO.py
+master/__init__.py
+master/statusReceiver.py
+master/testData.py
+master.egg-info/PKG-INFO
+master.egg-info/SOURCES.txt
+master.egg-info/dependency_links.txt
+master.egg-info/entry_points.txt
+master.egg-info/requires.txt
+master.egg-info/top_level.txt
+master.egg-info/zip-safe
+resource/master

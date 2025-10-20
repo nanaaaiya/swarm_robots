@@ -1,0 +1,4 @@
+[console_scripts]
+aco = master.ACO:main
+statusReceiver = master.statusReceiver:main
+

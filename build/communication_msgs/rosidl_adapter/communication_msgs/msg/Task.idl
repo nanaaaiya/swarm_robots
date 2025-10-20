@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from communication_msgs/msg/Task.msg
+// generated code does not contain a copyright notice
+
+
+module communication_msgs {
+  module msg {
+    struct Task {
+      int32 task_id;
+
+      float pickup_x;
+
+      float pickup_y;
+
+      float dropoff_x;
+
+      float dropoff_y;
+
+      boolean available;
+    };
+  };
+};

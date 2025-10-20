@@ -1,0 +1,12 @@
+{
+  "package_name": "communication_msgs",
+  "non_idl_tuples": [
+    "/home/hehe/Documents/GitHub/swarm_robots/algorithm/src/communication_msgs:msg/Robot.msg",
+    "/home/hehe/Documents/GitHub/swarm_robots/algorithm/src/communication_msgs:msg/Task.msg",
+    "/home/hehe/Documents/GitHub/swarm_robots/algorithm/src/communication_msgs:msg/TaskAllocation.msg",
+    "/home/hehe/Documents/GitHub/swarm_robots/algorithm/src/communication_msgs:msg/TaskAllocationArray.msg",
+    "/home/hehe/Documents/GitHub/swarm_robots/algorithm/src/communication_msgs:msg/RobotStatus.msg",
+    "/home/hehe/Documents/GitHub/swarm_robots/algorithm/src/communication_msgs:msg/RobotOdom.msg",
+    "/home/hehe/Documents/GitHub/swarm_robots/algorithm/src/communication_msgs:msg/Robots.msg"
+  ]
+}

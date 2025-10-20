@@ -1,0 +1,24 @@
+running develop
+running egg_info
+creating master.egg-info
+writing master.egg-info/PKG-INFO
+writing dependency_links to master.egg-info/dependency_links.txt
+writing entry points to master.egg-info/entry_points.txt
+writing requirements to master.egg-info/requires.txt
+writing top-level names to master.egg-info/top_level.txt
+writing manifest file 'master.egg-info/SOURCES.txt'
+reading manifest file 'master.egg-info/SOURCES.txt'
+writing manifest file 'master.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/hehe/Documents/GitHub/swarm_robots/install/master/lib/python3.10/site-packages/master.egg-link (link to .)
+Installing aco script to /home/hehe/Documents/GitHub/swarm_robots/install/master/lib/master
+Installing statusReceiver script to /home/hehe/Documents/GitHub/swarm_robots/install/master/lib/master
+
+Installed /home/hehe/Documents/GitHub/swarm_robots/build/master
+running symlink_data
+creating /home/hehe/Documents/GitHub/swarm_robots/install/master/share/ament_index
+creating /home/hehe/Documents/GitHub/swarm_robots/install/master/share/ament_index/resource_index
+creating /home/hehe/Documents/GitHub/swarm_robots/install/master/share/ament_index/resource_index/packages
+symbolically linking /home/hehe/Documents/GitHub/swarm_robots/build/master/resource/master -> /home/hehe/Documents/GitHub/swarm_robots/install/master/share/ament_index/resource_index/packages
+symbolically linking /home/hehe/Documents/GitHub/swarm_robots/build/master/package.xml -> /home/hehe/Documents/GitHub/swarm_robots/install/master/share/master
+creating /home/hehe/Documents/GitHub/swarm_robots/install/master/share/master/launch

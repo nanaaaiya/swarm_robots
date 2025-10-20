@@ -1,0 +1,32 @@
+[0.838s] Invoking command in '/home/hehe/Documents/GitHub/swarm_robots/build/slave': PYTHONPATH=/home/hehe/Documents/GitHub/swarm_robots/build/slave/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hehe/Documents/GitHub/swarm_robots/install/slave/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/hehe/Documents/GitHub/swarm_robots/build/slave/build --no-deps symlink_data
+[1.168s] running develop
+[1.345s] running egg_info
+[1.345s] creating slave.egg-info
+[1.345s] writing slave.egg-info/PKG-INFO
+[1.345s] writing dependency_links to slave.egg-info/dependency_links.txt
+[1.346s] writing entry points to slave.egg-info/entry_points.txt
+[1.346s] writing requirements to slave.egg-info/requires.txt
+[1.346s] writing top-level names to slave.egg-info/top_level.txt
+[1.346s] writing manifest file 'slave.egg-info/SOURCES.txt'
+[1.347s] reading manifest file 'slave.egg-info/SOURCES.txt'
+[1.348s] writing manifest file 'slave.egg-info/SOURCES.txt'
+[1.350s] running build_ext
+[1.350s] Creating /home/hehe/Documents/GitHub/swarm_robots/install/slave/lib/python3.10/site-packages/slave.egg-link (link to .)
+[1.351s] Installing navigation_process script to /home/hehe/Documents/GitHub/swarm_robots/install/slave/lib/slave
+[1.351s] Installing odom script to /home/hehe/Documents/GitHub/swarm_robots/install/slave/lib/slave
+[1.351s] Installing send_vel script to /home/hehe/Documents/GitHub/swarm_robots/install/slave/lib/slave
+[1.351s] Installing waypoint_navigator script to /home/hehe/Documents/GitHub/swarm_robots/install/slave/lib/slave
+[1.351s] 
+[1.352s] Installed /home/hehe/Documents/GitHub/swarm_robots/build/slave
+[1.352s] running symlink_data
+[1.352s] creating /home/hehe/Documents/GitHub/swarm_robots/install/slave/share/ament_index
+[1.352s] creating /home/hehe/Documents/GitHub/swarm_robots/install/slave/share/ament_index/resource_index
+[1.352s] creating /home/hehe/Documents/GitHub/swarm_robots/install/slave/share/ament_index/resource_index/packages
+[1.352s] symbolically linking /home/hehe/Documents/GitHub/swarm_robots/build/slave/resource/slave -> /home/hehe/Documents/GitHub/swarm_robots/install/slave/share/ament_index/resource_index/packages
+[1.352s] symbolically linking /home/hehe/Documents/GitHub/swarm_robots/build/slave/package.xml -> /home/hehe/Documents/GitHub/swarm_robots/install/slave/share/slave
+[1.352s] creating /home/hehe/Documents/GitHub/swarm_robots/install/slave/share/slave/config
+[1.352s] symbolically linking /home/hehe/Documents/GitHub/swarm_robots/build/slave/config/ekf_config.yaml -> /home/hehe/Documents/GitHub/swarm_robots/install/slave/share/slave/config
+[1.352s] symbolically linking /home/hehe/Documents/GitHub/swarm_robots/build/slave/config/waypoints.yaml -> /home/hehe/Documents/GitHub/swarm_robots/install/slave/share/slave/config
+[1.352s] creating /home/hehe/Documents/GitHub/swarm_robots/install/slave/share/slave/launch
+[1.353s] symbolically linking /home/hehe/Documents/GitHub/swarm_robots/build/slave/launch/waypoint_navigator_launch.py -> /home/hehe/Documents/GitHub/swarm_robots/install/slave/share/slave/launch
+[1.410s] Invoked command in '/home/hehe/Documents/GitHub/swarm_robots/build/slave' returned '0': PYTHONPATH=/home/hehe/Documents/GitHub/swarm_robots/build/slave/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hehe/Documents/GitHub/swarm_robots/install/slave/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/hehe/Documents/GitHub/swarm_robots/build/slave/build --no-deps symlink_data

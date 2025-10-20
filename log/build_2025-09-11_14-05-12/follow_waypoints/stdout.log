@@ -1,0 +1,25 @@
+running develop
+running egg_info
+creating follow_waypoints.egg-info
+writing follow_waypoints.egg-info/PKG-INFO
+writing dependency_links to follow_waypoints.egg-info/dependency_links.txt
+writing entry points to follow_waypoints.egg-info/entry_points.txt
+writing requirements to follow_waypoints.egg-info/requires.txt
+writing top-level names to follow_waypoints.egg-info/top_level.txt
+writing manifest file 'follow_waypoints.egg-info/SOURCES.txt'
+reading manifest file 'follow_waypoints.egg-info/SOURCES.txt'
+writing manifest file 'follow_waypoints.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/lib/python3.10/site-packages/follow-waypoints.egg-link (link to .)
+Installing follow_waypoints_exe script to /home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/lib/follow_waypoints
+Installing follow_waypoints_multi script to /home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/lib/follow_waypoints
+
+Installed /home/hehe/Documents/GitHub/swarm_robots/build/follow_waypoints
+running symlink_data
+creating /home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/share/ament_index
+creating /home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/share/ament_index/resource_index
+creating /home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/share/ament_index/resource_index/packages
+symbolically linking /home/hehe/Documents/GitHub/swarm_robots/build/follow_waypoints/resource/follow_waypoints -> /home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/share/ament_index/resource_index/packages
+symbolically linking /home/hehe/Documents/GitHub/swarm_robots/build/follow_waypoints/package.xml -> /home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/share/follow_waypoints
+creating /home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/share/follow_waypoints/config
+symbolically linking /home/hehe/Documents/GitHub/swarm_robots/build/follow_waypoints/config/follow_waypoints.yaml -> /home/hehe/Documents/GitHub/swarm_robots/install/follow_waypoints/share/follow_waypoints/config
