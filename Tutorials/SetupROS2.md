@@ -1,5 +1,13 @@
-# Set up system's locale to use UTF-8 English -> ensure all program (ROS2 & Gazebo)
-# speak the same "language" for character encoding
+# Set Up
+
+---
+
+## 1. Set up system's locale to use UTF-8 English 
+
+
+-> ensure all program (ROS2 & Gazebo) speak the same "language" for character encoding
+
+```bash
 sudo locale-gen en_US en_US.UTF-8
 sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -7,9 +15,14 @@ export LANG=en_US.UTF-8
 # Update system & install dependencies
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y curl gnupg lsb-release
+```
 
 
-# Add the ROS 2 apt repository
+---
+
+## 2. Add the ROS 2 apt repository
+
+```bash
 sudo apt update && sudo apt install -y software-properties-common gnupg2 curl
 curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key \
      | sudo gpg --dearmor -o /usr/share/keyrings/ros-archive-keyring.gpg
@@ -38,16 +51,27 @@ sudo apt install -y python3-colcon-common-extensions \
 sudo rosdep init
 rosdep update
 
+```
 
-# Setup algorithm/ (only Python)
+---
+
+## 3. Setup algorithm/ (only Python)
+
+```bash
 cd ~/algorithm
 python3 -m venv venv_algo
 source venv_algo/bin/activate
 pip install -r requirement_py.txt
 deactivate
+```
 
+---
 
-# Setup simulation_ws/ (the same goes to slave_ws/) 
+## 4. Setup simulation_ws/ (the same goes to slave_ws/) 
+
+Link: https://code.visualstudio.com/docs/setup/linux
+
+```bash
 cd ~/simulation_ws  
 rosdep install --from-paths src --ignore-src -r -y
 
@@ -59,35 +83,72 @@ source install/setup.bash
 echo "~/Documents/GitHub/swarm_robot/simulation_ws/install/setup.bash"  >> ~/.bashrc
 sudo apt update
 sudo apt install -y $(cat requirement_ros.txt)
+```
 
-# Spawn one robot in chosen world
+---
+
+## 5. Commands
+
+
+### Spawn one robot in chosen world
+
+```bash
 ros2 launch robot_bringup robot_spawn.launch.py world:=src/robot_bringup/worlds/swarm_world.worlds 
+```
 
-# Spawn multiple robots in chosen world (uncomment namespace in description files)
+### Spawn multiple robots in chosen world (uncomment namespace in description files)
+
+```bash
 ros2 launch robot_bringup multi_robots_spawn.launch.py use_sim_time:=true   
+```
 
-# Cartographer
-# Terminal 1:
-ros2 launch cartographer cartographer_launch.py use_sim_time:=true 
-# Terminal 2:
+### Cartographer
+
+Terminal 1:
+
+```bash
+ros2 launch cartographer cartographer_launch.py use_sim_time:=true
+```
+
+Terminal 2:
+
+```bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard 
-# Terminal 3:
+```
+Terminal 3:
+
+```bash
 ros2 run nav2_map_server map_saver_cli -f <map_name>
+```
 
-# Navigation2
-# Terminal 1:
+### Navigation2
+
+Terminal 1:
+
+```bash
 ros2 launch robot_bringup robot_spawn.launch.py world:=src/robot_bringup/worlds/swarm_world.worlds 
+```
 
-# Terminal 2:
+Terminal 2:
+
+```bash
 ros2 launch robot_navigation nav2.launch.py use_sim_time:=true
+```
 
-# Terminal 3:
-# One goal:
+Terminal 3:
+
+#### One goal:
+
+
+```bash
 ros2 action send_goal /navigate_to_pose \
   nav2_msgs/action/NavigateToPose \
   '{"pose": {"header": {"frame_id": "map"}, "pose": {"position": {"x": 1.0, "y": 2.0, "z": 0.0}, "orientation": {"x": 0.0, "y": 0.0, "z": 0.0, "w": 1.0}}}}'
+```
 
-# Multiple goals:
+#### Multiple goals:
+
+```bash
 ros2 action send_goal /follow_waypoints \
   nav2_msgs/action/FollowWaypoints \
   '{"poses": [
@@ -95,17 +156,33 @@ ros2 action send_goal /follow_waypoints \
     {"header":{"frame_id":"map"},"pose":{"position":{"x":2.5,"y":1.5,"z":0.0},"orientation":{"x":0.0,"y":0.0,"z":0.707,"w":0.707}}},
     {"header":{"frame_id":"map"},"pose":{"position":{"x":0.0,"y":0.0,"z":0.0},"orientation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0}}}
   ]}'
+```
 
-# Navigation process
+
+
+### Navigation process
+
+```bash
 ros2 run slave navigation_process
+```
 
-# Waypoint_navigator
+
+### Waypoint_navigator
+
+```bash
 ros2 run slave waypoint_navigator   --ros-args --params-file ~/swarm_robots/algorithm/src/slave/config/waypoints.yaml
+```
 
-# StatusReceiver
+### StatusReceiver
+
+```bash
 ros2 run master statusReceiver
+```
 
-# ACO
+### ACO
+
+```bash
 ros2 run master aco
+```
 
-
+---
